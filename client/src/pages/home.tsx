@@ -4,11 +4,7 @@ import Footer from '@/components/layout/footer';
 import Hero from '@/components/sections/hero';
 import ProofBar from '@/components/sections/proof-bar';
 import ServicesGrid from '@/components/sections/services-grid';
-import CaseStudies from '@/components/sections/case-studies';
-import Approach from '@/components/sections/approach';
-import Testimonials from '@/components/sections/testimonials';
-import Founders from '@/components/sections/founders';
-import ContactForm from '@/components/sections/contact-form';
+import Metrics from '@/components/sections/metrics';
 import { Button } from '@/components/ui/button';
 import Container from '@/components/ui/container';
 import { Link } from 'wouter';
@@ -22,7 +18,7 @@ function CTABand() {
           <h2 className="text-3xl font-bold text-white mb-4">
             Ready to ditch the circus?
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
             Join the founders who chose clarity over chaos. Let's build performance marketing that actually performs.
           </p>
           <Link href="/contact">
@@ -94,13 +90,13 @@ export default function Home() {
       <Header />
       <main id="main-content">
         <Hero />
-        <ProofBar />
-        <ServicesGrid />
-        <CaseStudies />
-        <Approach />
-        <Testimonials />
-        <Founders />
-        <ContactForm />
+        <Metrics />
+        <div className="py-20">
+          <ProofBar />
+        </div>
+        <div className="py-20">
+          <ServicesGrid />
+        </div>
         <CTABand />
       </main>
       <Footer />

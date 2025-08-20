@@ -10,10 +10,10 @@ export default function ProofBar() {
   ));
 
   return (
-    <section className="py-12 bg-muted">
+    <section className="py-16 bg-muted">
       <Container>
         <div className="text-center">
-          <p className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-8">
+          <p className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-12">
             Trusted by teams who value clarity
           </p>
         </div>

@@ -51,9 +51,9 @@ const services = [
 
 export default function ServicesGrid() {
   return (
-    <section id="services" className="section-padding">
+    <section id="services" className="py-20">
       <Container>
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <h2 className="text-section text-foreground mb-4">
             Performance marketing solutions
           </h2>
@@ -62,7 +62,7 @@ export default function ServicesGrid() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
               <CardContent className="p-8">

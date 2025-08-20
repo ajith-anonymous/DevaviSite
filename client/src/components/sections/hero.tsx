@@ -6,12 +6,12 @@ import Typewriter from '@/components/ui/typewriter';
 
 export default function Hero() {
   return (
-    <section className="relative section-padding overflow-hidden">
+    <section className="relative py-32 lg:py-40 overflow-hidden">
       <Container>
         <div className="text-left">
-          <h1 className="text-hero text-foreground mb-6">
+          <h1 className="text-hero text-foreground mb-8">
             Performance marketing,<br />
-            <span className="text-primary">
+            <span className="text-accent">
               <Typewriter 
                 text="minus the circus" 
                 typeSpeed={80} 
@@ -22,11 +22,11 @@ export default function Hero() {
               />
             </span>
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mr-auto">
+          <p className="text-xl text-muted-foreground mb-12 max-w-2xl mr-auto leading-relaxed">
             Co-founder-led execution, ruthless clarity, results you can actually ship. 
             We work with no more than 20 clients to ensure deep involvement and attention to detail.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-start">
+          <div className="flex flex-col sm:flex-row gap-6 justify-start mb-20">
             <Link href="/contact">
               <Button size="lg" className="text-lg px-8 py-4">
                 Book a working session
