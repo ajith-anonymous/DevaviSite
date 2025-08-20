@@ -8,8 +8,8 @@ interface MetricPillProps {
 }
 
 const variantClasses = {
-  primary: 'bg-blue-50 text-primary',
-  accent: 'bg-orange-50 text-accent',
+  primary: 'bg-primary/10 text-primary',
+  accent: 'bg-accent/10 text-accent',
   success: 'bg-green-50 text-green-600',
   warning: 'bg-yellow-50 text-yellow-600',
 };

@@ -38,9 +38,9 @@ export default function Hero() {
 
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-50 rounded-full opacity-20 animate-float"></div>
-        <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-orange-50 rounded-full opacity-30"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-purple-50 rounded-full opacity-15"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/5 rounded-full opacity-20 animate-float"></div>
+        <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-accent/10 rounded-full opacity-30"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-primary/10 rounded-full opacity-15"></div>
       </div>
     </section>
   );

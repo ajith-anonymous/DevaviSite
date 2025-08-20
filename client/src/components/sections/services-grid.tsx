@@ -15,13 +15,13 @@ const services = [
     icon: BarChart3,
     title: 'Paid Social (Meta)',
     description: 'Strategic campaigns that drive real conversions. We know the benchmarks and won\'t overpromise on what\'s achievable.',
-    color: 'bg-blue-100 text-primary',
+    color: 'bg-primary/10 text-primary',
   },
   {
     icon: Search,
     title: 'Paid Search (Google)',
     description: 'Capture demand when it matters most. From search to shopping campaigns that actually move your P&L.',
-    color: 'bg-orange-100 text-accent',
+    color: 'bg-accent/10 text-accent',
   },
   {
     icon: CheckCircle,
@@ -33,19 +33,19 @@ const services = [
     icon: Zap,
     title: 'Conversion Rate Optimization',
     description: 'Make your existing traffic work harder. We test, measure, and optimize based on actual user behavior.',
-    color: 'bg-purple-100 text-purple-600',
+    color: 'bg-primary/20 text-primary',
   },
   {
     icon: Heart,
     title: 'Creative Strategy',
     description: 'Creative that actually sells, not just looks pretty. We understand performance creative and what drives conversions.',
-    color: 'bg-pink-100 text-pink-600',
+    color: 'bg-accent/20 text-accent',
   },
   {
     icon: MessageSquare,
     title: 'Strategic Consulting',
     description: 'We help you understand how performance marketing impacts your bottom line. Education-first approach to partnership.',
-    color: 'bg-slate-100 text-slate-600',
+    color: 'bg-muted text-muted-foreground',
   },
 ];
 
