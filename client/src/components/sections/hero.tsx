@@ -8,18 +8,25 @@ export default function Hero() {
   return (
     <section className="relative section-padding overflow-hidden">
       <Container>
-        <div className="text-center">
+        <div className="text-right">
           <h1 className="text-hero text-foreground mb-6">
             Performance marketing,<br />
             <span className="text-primary">
-              <Typewriter text="minus the circus" speed={80} delay={500} />
+              <Typewriter 
+                text="minus the circus" 
+                typeSpeed={80} 
+                backspaceSpeed={50}
+                delay={500} 
+                pauseDuration={2000}
+                loop={true}
+              />
             </span>
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-8 max-w-3xl ml-auto">
             Co-founder-led execution, ruthless clarity, results you can actually ship. 
             We work with no more than 20 clients to ensure deep involvement and attention to detail.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-end">
             <Link href="/contact">
               <Button size="lg" className="text-lg px-8 py-4">
                 Book a working session

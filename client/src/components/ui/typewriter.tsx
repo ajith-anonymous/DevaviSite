@@ -3,43 +3,80 @@ import { cn } from '@/lib/utils';
 
 interface TypewriterProps {
   text: string;
-  speed?: number;
+  typeSpeed?: number;
+  backspaceSpeed?: number;
   delay?: number;
+  pauseDuration?: number;
+  loop?: boolean;
   className?: string;
   cursor?: boolean;
 }
 
 export default function Typewriter({ 
   text, 
-  speed = 100, 
-  delay = 0, 
+  typeSpeed = 100, 
+  backspaceSpeed = 50,
+  delay = 0,
+  pauseDuration = 1500,
+  loop = false,
   className, 
   cursor = true 
 }: TypewriterProps) {
   const [displayText, setDisplayText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  const [isBackspacing, setIsBackspacing] = useState(false);
 
   useEffect(() => {
-    const startTyping = () => {
+    let timeoutId: NodeJS.Timeout;
+    let intervalId: NodeJS.Timeout;
+
+    const startCycle = () => {
       setIsTyping(true);
+      setIsBackspacing(false);
       let index = 0;
       
-      const typeInterval = setInterval(() => {
+      // Typing phase
+      intervalId = setInterval(() => {
         if (index < text.length) {
           setDisplayText(text.slice(0, index + 1));
           index++;
         } else {
           setIsTyping(false);
-          clearInterval(typeInterval);
+          clearInterval(intervalId);
+          
+          if (loop) {
+            // Pause before backspacing
+            timeoutId = setTimeout(() => {
+              setIsBackspacing(true);
+              let backIndex = text.length;
+              
+              // Backspacing phase
+              intervalId = setInterval(() => {
+                if (backIndex > 0) {
+                  setDisplayText(text.slice(0, backIndex - 1));
+                  backIndex--;
+                } else {
+                  setIsBackspacing(false);
+                  clearInterval(intervalId);
+                  
+                  // Pause before starting again
+                  timeoutId = setTimeout(startCycle, pauseDuration);
+                }
+              }, backspaceSpeed);
+            }, pauseDuration);
+          }
         }
-      }, speed);
-
-      return () => clearInterval(typeInterval);
+      }, typeSpeed);
     };
 
-    const delayTimeout = setTimeout(startTyping, delay);
-    return () => clearTimeout(delayTimeout);
-  }, [text, speed, delay]);
+    const delayTimeout = setTimeout(startCycle, delay);
+    
+    return () => {
+      clearTimeout(delayTimeout);
+      clearTimeout(timeoutId);
+      clearInterval(intervalId);
+    };
+  }, [text, typeSpeed, backspaceSpeed, delay, pauseDuration, loop]);
 
   return (
     <span className={cn(className)}>
@@ -47,8 +84,7 @@ export default function Typewriter({
       {cursor && (
         <span 
           className={cn(
-            "inline-block w-0.5 h-[1em] bg-current ml-1 animate-pulse",
-            !isTyping && displayText.length === text.length && "opacity-0"
+            "inline-block w-0.5 h-[1em] bg-current ml-1 animate-pulse"
           )}
         />
       )}
