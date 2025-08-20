@@ -1,0 +1,168 @@
+# Project Prompt: Build Devavi Media Website
+
+## 1) You are
+
+* A full‑stack web developer and UI designer.
+* Deliver a production‑ready marketing website for **Devavi Media** in this session.
+
+## 2) Inputs (ingest first)
+
+* **Attached brief**: This is the creative brief I gave my designer for brand collaterals. Read and extract brand facts, tone, visual system (colors, type, icon style), and any do/don’t lists. Treat this as the single source of truth.
+* **Reference site**: [https://crafto.themezaa.com/marketing/](https://crafto.themezaa.com/marketing/) (use for layout rhythm, spacing, typography scale, section density, micro‑interactions—not copy).
+
+## 3) Company context (from founder)
+
+* **Name**: Devavi Media (named after our fathers, *Devendra* and *Ravi*).
+* **Founders**: Swastik Dubey & Anushka Sirohi.
+* **What we do**: Performance marketing with clarity, transparency, and hands‑on execution. Co‑founder‑led work; we keep a limited client roster for deep involvement and integrity.
+* **Target**: Founders & marketing leads at growth‑stage companies.
+* **Tone**: Approachable, witty, expert. No fluff, no “luxury” clichés. Straight talk; proof‑first.
+* **Future scope**: Marketplaces and digital products.
+
+## 4) Primary goal
+
+Ship a fast, credible site that converts discovery traffic into qualified calls.
+
+## 5) Deliverables
+
+* A working website with code, assets, and deployment.
+* A clear **README** with setup, run, and deploy steps.
+* Sample content populated everywhere (you may draft initial copy—see guidance below).
+* Re-usable component library and a design token system.
+
+## 6) Tech stack (preferred)
+
+* **Framework**: Next.js (App Router) or Vite + React if you must. CSR/SSR mix allowed.
+* **Styling**: Tailwind CSS.
+* **UI Kit**: shadcn/ui + lucide-react icons.
+* **Animations**: Framer Motion (subtle, performance‑friendly).
+* **Forms**: React Hook Form + Zod validation; submit to an API route (Node/Express handler) that emails via Nodemailer (or a provider) and logs to console in dev.
+* **Deployment**: Vercel (preferred). Provide `vercel.json` if needed.
+
+If an item is missing in the brief, propose sensible defaults and keep them in `README`.
+
+## 7) Information architecture & pages
+
+Create these pages/sections with SEO‑friendly routes:
+
+* **/** (Home)
+
+  * Above‑the‑fold hero
+  * Proof bar (logos/social proof)
+  * What we do (performance marketing pillars)
+  * Selected results (3–4 case tiles)
+  * Services overview grid
+  * Approach (our operating principles)
+  * Testimonials (2–4 quotes)
+  * CTA band
+* **/services**
+
+  * Channel cards: Paid Social, Paid Search, Analytics & Tracking, CRO, Creative Strategy
+  * Process timeline (brief → plan → run → scale → report)
+  * FAQs (implementation, timelines, budgets)
+* **/work** (case studies index) and **/work/\[slug]** (case template below)
+* **/about** (founders, values, story behind the name)
+* **/contact** (form + calendaring link placeholder)
+* **/legal/privacy** (basic template)
+
+### Case study template (/work/\[slug])
+
+* Problem → Strategy → Execution → Results.
+* Include 3–5 key metrics with context and time window. Add a lightweight chart image or simple stat blocks.
+* Add “What we’d do next” for credibility.
+
+## 8) Copy guidelines (draft initial copy if missing)
+
+* Voice: crisp, confident, human. Avoid buzzwords. Prefer verbs and outcomes.
+* Headlines aim for 5–8 words. Subheads ≤ 18 words.
+* **Sample hero** (feel free to iterate):
+
+  * H1: *Performance marketing, minus the circus.*
+  * Sub: *Co‑founder‑led execution, ruthless clarity, results you can actually ship.*
+  * CTA primary: *Book a working session* • Secondary: *See our work*
+* **Proof bar label**: *Trusted by teams who value clarity.*
+* **Approach bullets**: *Fewer clients, deeper work · Transparent math · Creative that sells · Compounding learnings.*
+
+## 9) Components to build
+
+* `Container`, `Section`, `Grid` primitives
+* `Button`, `Badge`, `Stat`, `Card`, `LogoWall`, `Testimonial`, `FAQ`, `Steps`, `MetricPill`.
+* `Header` (sticky), `MobileNav`, `Footer` with legal links.
+
+## 10) Design system
+
+* Pull colors and typography from the attached brief. If unspecified:
+
+  * Neutrals + one accent; accessible contrasts.
+  * Font stack: Inter (UI), Source Serif or Geist as secondary if needed.
+* Use 8px spacing scale; large, airy sections like the reference site.
+* Rounded‑2xl, soft shadows; tasteful motion at 150–250ms.
+
+## 11) SEO, analytics, performance
+
+* `<head>` tags per page: unique titles (≤60 chars) and meta descriptions (≤155 chars).
+* OG tags + social preview images (generate simple SVG/PNG banners programmatically if assets missing).
+* JSON‑LD for Organization, WebSite, Breadcrumbs, and for each case study (Article).
+* GA4 (placeholder ID) wired via script include.
+* Lighthouse targets: **Performance ≥ 90**, **Accessibility ≥ 95**, **Best Practices ≥ 95**, **SEO ≥ 95** on mobile.
+
+## 12) Accessibility
+
+* Meet **WCAG 2.1 AA**. Keyboard nav, focus states, skip links, aria‑labels.
+* Alt text for all meaningful images; semantic HTML.
+
+## 13) Content & assets
+
+* Logo/SVG from brief. If missing, typeset a logotype and document it.
+* Fallback illustrations: simple line icons, abstract shapes, or CSS art; avoid stock clichés.
+* Provide a `content/` folder with JSON/MD/MDX so non‑devs can update text.
+
+## 14) Contact & calendaring
+
+* `/contact` form fields: Name, Work email, Company, Monthly ad spend (select), Message.
+* Validate & sanitize. On success: thank‑you page + send email. Add a placeholder for Calendly/Cal.com.
+
+## 15) Repo & files
+
+```
+/ (project root)
+  /app or /src
+  /components
+  /lib
+  /styles
+  /content
+  /public
+  README.md
+```
+
+* Include example env file `.env.example` (SMTP creds, GA4 ID, etc.).
+
+## 16) Acceptance criteria (checklist)
+
+* [ ] Matches brand tone from brief; no luxury buzzwords.
+* [ ] Clean, modern UI close in quality to the reference site.
+* [ ] Pages & sections implemented as above.
+* [ ] Mobile‑first, responsive.
+* [ ] Forms validate and POST; server route logs in dev and emails in prod.
+* [ ] SEO meta + JSON‑LD + OG images per page.
+* [ ] Lighthouse scores hit the targets on mobile.
+* [ ] README explains setup, commands, deployment, and where to edit content.
+
+## 17) Stretch (nice‑to‑haves if time permits)
+
+* MDX‑driven case studies.
+* Simple CMS bridge (e.g., Notion exporter or TinaCMS), optional.
+* Dark mode toggle.
+* Re-usable OG image generator route.
+
+## 18) Instructions to yourself
+
+1. Parse the attached brief and extract brand tokens (colors, type, logo usage) and voice rules.
+2. Scaffold the repo, implement components, then pages.
+3. Populate with sample copy that reflects Devavi’s voice.
+4. Wire forms, analytics, and SEO.
+5. Ship to Vercel; provide the live URL and repo link, and include usage notes in README.
+
+---
+
+**If any detail from the brief conflicts with this prompt, follow the brief and note the deviation in the README.**
