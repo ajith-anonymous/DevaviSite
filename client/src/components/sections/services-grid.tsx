@@ -27,7 +27,7 @@ const services = [
     icon: CheckCircle,
     title: 'Analytics & Tracking',
     description: 'Proper measurement setup so you actually know what\'s working. No vanity metrics, just clear attribution.',
-    color: 'bg-green-100 text-green-600',
+    color: 'bg-muted text-foreground',
   },
   {
     icon: Zap,

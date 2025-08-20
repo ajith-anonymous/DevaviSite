@@ -5,30 +5,30 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(345, 100%, 99%);
-  --foreground: hsl(242, 84%, 12%);
-  --card: hsl(345, 100%, 99%);
-  --card-foreground: hsl(242, 84%, 12%);
-  --popover: hsl(345, 100%, 99%);
-  --popover-foreground: hsl(242, 84%, 12%);
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(0, 0%, 0%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(0, 0%, 0%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(0, 0%, 0%);
   --primary: hsl(242, 84%, 12%);
-  --primary-foreground: hsl(345, 100%, 99%);
-  --secondary: hsl(270, 33%, 96%);
-  --secondary-foreground: hsl(242, 84%, 12%);
-  --muted: hsl(270, 33%, 96%);
-  --muted-foreground: hsl(242, 72%, 20%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 0%, 96%);
+  --secondary-foreground: hsl(0, 0%, 0%);
+  --muted: hsl(0, 0%, 96%);
+  --muted-foreground: hsl(0, 0%, 45%);
   --accent: hsl(30, 100%, 68%);
-  --accent-foreground: hsl(242, 84%, 12%);
+  --accent-foreground: hsl(0, 0%, 0%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --border: hsl(270, 33%, 88%);
-  --input: hsl(270, 33%, 88%);
+  --border: hsl(0, 0%, 90%);
+  --input: hsl(0, 0%, 90%);
   --ring: hsl(242, 84%, 12%);
   --chart-1: hsl(242, 84%, 12%);
-  --chart-2: hsl(160, 60%, 45%);
-  --chart-3: hsl(30, 100%, 68%);
-  --chart-4: hsl(142, 71%, 45%);
-  --chart-5: hsl(336, 75%, 40%);
+  --chart-2: hsl(30, 100%, 68%);
+  --chart-3: hsl(0, 0%, 0%);
+  --chart-4: hsl(0, 0%, 45%);
+  --chart-5: hsl(0, 0%, 90%);
   --radius: 0.75rem;
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-serif: 'Georgia', serif;
@@ -36,24 +36,24 @@
 }
 
 .dark {
-  --background: hsl(242, 84%, 12%);
-  --foreground: hsl(270, 33%, 96%);
-  --card: hsl(242, 84%, 12%);
-  --card-foreground: hsl(270, 33%, 96%);
-  --popover: hsl(242, 84%, 12%);
-  --popover-foreground: hsl(270, 33%, 96%);
+  --background: hsl(0, 0%, 0%);
+  --foreground: hsl(0, 0%, 100%);
+  --card: hsl(0, 0%, 0%);
+  --card-foreground: hsl(0, 0%, 100%);
+  --popover: hsl(0, 0%, 0%);
+  --popover-foreground: hsl(0, 0%, 100%);
   --primary: hsl(30, 100%, 68%);
-  --primary-foreground: hsl(242, 84%, 12%);
-  --secondary: hsl(242, 72%, 20%);
-  --secondary-foreground: hsl(270, 33%, 96%);
-  --muted: hsl(242, 72%, 20%);
-  --muted-foreground: hsl(270, 33%, 80%);
-  --accent: hsl(30, 100%, 68%);
-  --accent-foreground: hsl(242, 84%, 12%);
+  --primary-foreground: hsl(0, 0%, 0%);
+  --secondary: hsl(0, 0%, 10%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(0, 0%, 10%);
+  --muted-foreground: hsl(0, 0%, 65%);
+  --accent: hsl(242, 84%, 12%);
+  --accent-foreground: hsl(0, 0%, 100%);
   --destructive: hsl(0, 62%, 30%);
-  --destructive-foreground: hsl(270, 33%, 96%);
-  --border: hsl(242, 72%, 20%);
-  --input: hsl(242, 72%, 20%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(0, 0%, 15%);
+  --input: hsl(0, 0%, 15%);
   --ring: hsl(30, 100%, 68%);
 }
 
@@ -93,11 +93,11 @@
   }
 
   .bg-gradient-primary {
-    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(242, 72%, 20%) 100%);
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(0, 0%, 0%) 100%);
   }
 
   .bg-gradient-accent {
-    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(30, 100%, 75%) 100%);
+    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(0, 0%, 0%) 100%);
   }
 
   .animate-float {
