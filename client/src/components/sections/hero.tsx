@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section className="relative section-padding overflow-hidden">
       <Container>
-        <div className="text-right">
+        <div className="text-left">
           <h1 className="text-hero text-foreground mb-6">
             Performance marketing,<br />
             <span className="text-primary">
@@ -22,11 +22,11 @@ export default function Hero() {
               />
             </span>
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl ml-auto">
+          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mr-auto">
             Co-founder-led execution, ruthless clarity, results you can actually ship. 
             We work with no more than 20 clients to ensure deep involvement and attention to detail.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-end">
+          <div className="flex flex-col sm:flex-row gap-4 justify-start">
             <Link href="/contact">
               <Button size="lg" className="text-lg px-8 py-4">
                 Book a working session
