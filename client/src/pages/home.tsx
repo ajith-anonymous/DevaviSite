@@ -5,6 +5,7 @@ import Hero from '@/components/sections/hero';
 import ProofBar from '@/components/sections/proof-bar';
 import ServicesGrid from '@/components/sections/services-grid';
 import Metrics from '@/components/sections/metrics';
+import Solutions from '@/components/sections/solutions';
 import { Button } from '@/components/ui/button';
 import Container from '@/components/ui/container';
 import { Link } from 'wouter';
@@ -91,6 +92,7 @@ export default function Home() {
       <main id="main-content">
         <Hero />
         <Metrics />
+        <Solutions />
         <div className="py-20">
           <ProofBar />
         </div>
