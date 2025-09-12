@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import Container from '@/components/ui/container';
+import devaviLogo from '@assets/Devavi Logo_1757677815048.png';
 
 const navigation = [
   { name: 'Services', href: '/services' },
@@ -31,10 +32,13 @@ export default function Header() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <Link href="/">
-                <a className="text-2xl font-bold text-foreground hover:text-primary transition-colors">
-                  Devavi Media
-                </a>
+              <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+                <img 
+                  src={devaviLogo}
+                  alt="Devavi Media"
+                  className="h-8 w-auto"
+                  data-testid="logo-devavi"
+                />
               </Link>
             </div>
 
