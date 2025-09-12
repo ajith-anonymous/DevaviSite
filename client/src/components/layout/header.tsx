@@ -36,7 +36,7 @@ export default function Header() {
                 <img 
                   src={devaviLogo}
                   alt="Devavi Media"
-                  className="h-8 w-auto"
+                  className="h-20 w-auto"
                   data-testid="logo-devavi"
                 />
               </Link>
