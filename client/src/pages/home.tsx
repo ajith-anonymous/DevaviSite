@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import Hero from '@/components/sections/hero';
-import ProofBar from '@/components/sections/proof-bar';
 import ServicesGrid from '@/components/sections/services-grid';
 import Metrics from '@/components/sections/metrics';
 import Solutions from '@/components/sections/solutions';
@@ -93,9 +92,6 @@ export default function Home() {
         <Hero />
         <Metrics />
         <Solutions />
-        <div className="py-20">
-          <ProofBar />
-        </div>
         <div className="py-20">
           <ServicesGrid />
         </div>
