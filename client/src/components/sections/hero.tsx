@@ -6,7 +6,7 @@ export default function Hero() {
     <section className="relative py-32 lg:py-40 overflow-hidden">
       <Container>
         <div className="text-left">
-          <h1 className="text-hero text-foreground mb-8">
+          <h1 className="text-3xl lg:text-4xl font-bold leading-tight tracking-tight text-foreground mb-6">
             Performance marketing,<br />
             <span className="text-accent">
               <Typewriter 
@@ -19,7 +19,7 @@ export default function Hero() {
               />
             </span>
           </h1>
-          <p className="text-xl text-muted-foreground mb-12 max-w-2xl mr-auto leading-relaxed">
+          <p className="text-base lg:text-lg text-muted-foreground mb-10 max-w-lg leading-relaxed">
             Co-founder-led execution, ruthless clarity, results you can actually ship. 
             We work with no more than 20 clients to ensure deep involvement and attention to detail.
           </p>
