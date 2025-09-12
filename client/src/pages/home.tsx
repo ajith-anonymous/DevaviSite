@@ -14,11 +14,11 @@ function CTABand() {
   return (
     <section className="py-16 bg-primary">
       <Container>
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
+        <div className="text-left">
+          <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
             Ready to ditch the circus?
           </h2>
-          <p className="text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
+          <p className="text-base lg:text-lg text-primary-foreground/80 mb-8 max-w-lg">
             Join the founders who chose clarity over chaos. Let's build performance marketing that actually performs.
           </p>
           <Link href="/contact">

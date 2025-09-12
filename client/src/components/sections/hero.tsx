@@ -6,7 +6,7 @@ export default function Hero() {
     <section className="relative py-32 lg:py-40 overflow-hidden">
       <Container>
         <div className="text-left">
-          <h1 className="text-3xl lg:text-4xl font-bold leading-tight tracking-tight text-foreground mb-6">
+          <h1 className="text-hero text-foreground mb-6">
             Performance marketing,<br />
             <span className="text-accent">
               <Typewriter 

@@ -53,11 +53,11 @@ export default function ServicesGrid() {
   return (
     <section id="services" className="py-20">
       <Container>
-        <div className="text-center mb-20">
+        <div className="text-left mb-16">
           <h2 className="text-section text-foreground mb-4">
             Performance marketing solutions
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base lg:text-lg text-muted-foreground max-w-lg">
             We focus on the channels that matter most for your growth stage, with transparent math and realistic expectations.
           </p>
         </div>
@@ -69,10 +69,10 @@ export default function ServicesGrid() {
                 <div className={`w-12 h-12 ${service.color} rounded-lg flex items-center justify-center mb-6`}>
                   <service.icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">
+                <h3 className="text-lg font-semibold text-foreground mb-3">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground mb-4">
+                <p className="text-sm md:text-base text-muted-foreground mb-4">
                   {service.description}
                 </p>
                 <Link href="/contact">
