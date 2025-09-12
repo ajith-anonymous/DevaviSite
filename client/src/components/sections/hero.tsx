@@ -1,6 +1,3 @@
-import { ArrowRight, Play } from 'lucide-react';
-import { Link } from 'wouter';
-import { Button } from '@/components/ui/button';
 import Container from '@/components/ui/container';
 import Typewriter from '@/components/ui/typewriter';
 
@@ -26,19 +23,31 @@ export default function Hero() {
             Co-founder-led execution, ruthless clarity, results you can actually ship. 
             We work with no more than 20 clients to ensure deep involvement and attention to detail.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-start mb-20">
-            <Link href="/contact">
-              <Button size="lg" className="text-lg px-8 py-4">
-                Book a working session
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-            <Link href="/work">
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4">
-                <Play className="mr-2 h-5 w-5" />
-                See our work
-              </Button>
-            </Link>
+          <div className="mb-20">
+            <div className="text-left mb-8">
+              <p className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
+                Trusted by teams who value clarity
+              </p>
+            </div>
+            
+            <div className="overflow-hidden whitespace-nowrap">
+              <div className="flex animate-scroll">
+                {Array.from({ length: 8 }).map((_, i) => (
+                  <div key={i} className="flex items-center justify-center flex-shrink-0 mx-8">
+                    <div className="w-32 h-16 bg-muted-foreground/20 rounded-md flex items-center justify-center border border-border">
+                      <span className="text-xs text-muted-foreground font-medium">Client Logo {i + 1}</span>
+                    </div>
+                  </div>
+                ))}
+                {Array.from({ length: 8 }).map((_, i) => (
+                  <div key={`duplicate-${i}`} className="flex items-center justify-center flex-shrink-0 mx-8">
+                    <div className="w-32 h-16 bg-muted-foreground/20 rounded-md flex items-center justify-center border border-border">
+                      <span className="text-xs text-muted-foreground font-medium">Client Logo {i + 1}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </Container>
