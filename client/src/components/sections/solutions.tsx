@@ -31,7 +31,7 @@ export default function Solutions() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   return (
-    <section className="py-20 bg-background overflow-hidden">
+    <section className="py-16 bg-background overflow-hidden">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {solutions.map((solution, index) => (

@@ -3,7 +3,7 @@ import Typewriter from '@/components/ui/typewriter';
 
 export default function Hero() {
   return (
-    <section className="relative py-32 lg:py-40 overflow-hidden">
+    <section className="relative py-24 lg:py-32 overflow-hidden">
       <Container>
         <div className="text-left">
           <h1 className="text-hero text-foreground mb-6">

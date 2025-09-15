@@ -12,10 +12,10 @@ import { Link } from 'wouter';
 // CTA Band Component
 function CTABand() {
   return (
-    <section className="py-16 bg-primary">
+    <section className="py-12 bg-primary">
       <Container>
         <div className="text-left">
-          <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
+          <h2 className="text-section font-bold text-white mb-4">
             Ready to ditch the circus?
           </h2>
           <p className="text-base lg:text-lg text-primary-foreground/80 mb-8 max-w-lg">

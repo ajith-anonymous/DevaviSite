@@ -51,7 +51,7 @@ const services = [
 
 export default function ServicesGrid() {
   return (
-    <section id="services" className="py-20">
+    <section id="services" className="py-16">
       <Container>
         <div className="text-left mb-16">
           <h2 className="text-section text-foreground mb-4">
