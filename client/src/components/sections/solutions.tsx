@@ -1,7 +1,7 @@
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import Container from '@/components/ui/container';
 import { Button } from '@/components/ui/button';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const solutions = [
   {
@@ -29,27 +29,76 @@ const solutions = [
 
 export default function Solutions() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const rafId = useRef<number>();
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (rafId.current) {
+        cancelAnimationFrame(rafId.current);
+      }
+
+      rafId.current = requestAnimationFrame(() => {
+        if (sectionRef.current) {
+          const rect = sectionRef.current.getBoundingClientRect();
+          const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
+          
+          cardRefs.current.forEach((card, index) => {
+            if (card) {
+              const baseOffset = (index - 1) * 20;
+              const parallaxStrength = 30;
+              const offsetX = x * parallaxStrength + baseOffset;
+              card.style.transform = `translateX(${offsetX}px)`;
+            }
+          });
+        }
+      });
+    };
+
+    const section = sectionRef.current;
+    if (section) {
+      section.addEventListener('mousemove', handleMouseMove);
+      return () => {
+        section.removeEventListener('mousemove', handleMouseMove);
+        if (rafId.current) {
+          cancelAnimationFrame(rafId.current);
+        }
+      };
+    }
+  }, []);
 
   return (
-    <section className="py-16 bg-background overflow-hidden">
+    <section ref={sectionRef} className="py-16 bg-background overflow-hidden">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto perspective-1000">
           {solutions.map((solution, index) => (
             <div
               key={index}
-              className={`relative ${solution.bgColor} rounded-2xl p-8 h-80 flex flex-col justify-between border border-border group cursor-pointer transform transition-all duration-500 ease-out
+              ref={(el) => (cardRefs.current[index] = el)}
+              className={`relative ${solution.bgColor} rounded-2xl p-8 h-80 flex flex-col justify-between border-2 border-border group cursor-pointer transform transition-all duration-500 ease-out shadow-xl parallax-card
                 hover:-translate-y-6 hover:rotate-1 hover:shadow-2xl hover:shadow-accent/20
-                ${hoveredCard === index ? 'scale-105' : hoveredCard !== null ? 'scale-95 opacity-80' : 'scale-100 opacity-100'}
+                ${hoveredCard === index ? 'scale-105 z-10' : hoveredCard !== null ? 'scale-95 opacity-80' : 'scale-100 opacity-100'}
                 animate-slide-up`}
               style={{
-                animationDelay: `${index * 150}ms`
+                animationDelay: `${index * 150}ms`,
+                willChange: 'transform',
               }}
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
               data-testid={`card-solution-${index + 1}`}
             >
-              {/* Floating background element */}
+              {/* Enhanced tile background with grid pattern */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Tile grid effect */}
+              <div 
+                className="absolute inset-0 rounded-2xl opacity-5"
+                style={{
+                  backgroundImage: 'linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent)',
+                  backgroundSize: '50px 50px'
+                }}
+              ></div>
               
               <div className="flex-1 relative z-10">
                 <h3 className={`text-2xl font-bold ${solution.textColor} mb-4 transform transition-transform duration-300 group-hover:translate-x-2`}>
@@ -74,8 +123,11 @@ export default function Solutions() {
                 </div>
               </div>
 
-              {/* Decorative corner element */}
+              {/* Enhanced decorative corner elements for tile effect */}
               <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-accent opacity-20 group-hover:opacity-60 group-hover:scale-150 transition-all duration-300"></div>
+              <div className="absolute top-4 left-4 w-1 h-1 rounded-full bg-accent opacity-10"></div>
+              <div className="absolute bottom-4 right-4 w-1 h-1 rounded-full bg-accent opacity-10"></div>
+              <div className="absolute bottom-4 left-4 w-1 h-1 rounded-full bg-accent opacity-10"></div>
             </div>
           ))}
         </div>
