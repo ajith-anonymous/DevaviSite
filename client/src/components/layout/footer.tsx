@@ -67,10 +67,11 @@ export default function Footer() {
               <ul className="space-y-3 md:space-y-2 text-slate-300 text-sm md:text-base">
                 {footerNavigation.services.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href}>
-                      <a className="hover:text-white transition-colors inline-block py-1 min-h-[44px] md:min-h-0 flex items-center">
-                        {item.name}
-                      </a>
+                    <Link 
+                      href={item.href}
+                      className="hover:text-white transition-colors inline-block py-1 min-h-[44px] md:min-h-0 flex items-center"
+                    >
+                      {item.name}
                     </Link>
                   </li>
                 ))}
@@ -82,10 +83,11 @@ export default function Footer() {
               <ul className="space-y-3 md:space-y-2 text-slate-300 text-sm md:text-base">
                 {footerNavigation.company.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href}>
-                      <a className="hover:text-white transition-colors inline-block py-1 min-h-[44px] md:min-h-0 flex items-center">
-                        {item.name}
-                      </a>
+                    <Link 
+                      href={item.href}
+                      className="hover:text-white transition-colors inline-block py-1 min-h-[44px] md:min-h-0 flex items-center"
+                    >
+                      {item.name}
                     </Link>
                   </li>
                 ))}

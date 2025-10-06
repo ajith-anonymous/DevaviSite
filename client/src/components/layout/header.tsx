@@ -16,14 +16,14 @@ export default function Header() {
 
       <header className="sticky top-0 z-40 bg-background/95 backdrop-blur-sm border-b border-border">
         <Container>
-          <div className="flex justify-end items-center h-16">
+          <div className="flex justify-end items-center h-14 md:h-16">
             {/* Logo moved to right */}
             <div className="flex-shrink-0">
-              <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+              <Link href="/" className="flex items-center hover:opacity-80 transition-opacity p-2 -m-2 min-h-[44px]">
                 <img 
                   src={devaviLogo}
                   alt="Devavi Media"
-                  className="h-12 w-auto"
+                  className="h-10 md:h-12 w-auto"
                   data-testid="logo-devavi"
                 />
               </Link>

@@ -75,10 +75,8 @@ export default function ServicesGrid() {
                 <p className="text-sm md:text-base text-muted-foreground mb-3 md:mb-4 leading-relaxed">
                   {service.description}
                 </p>
-                <Link href="/contact">
-                  <a className="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-colors text-sm md:text-base min-h-[44px] py-2">
-                    Learn more →
-                  </a>
+                <Link href="/contact" className="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-colors text-sm md:text-base min-h-[44px] py-2">
+                  Learn more →
                 </Link>
               </CardContent>
             </Card>
