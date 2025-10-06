@@ -51,32 +51,32 @@ const services = [
 
 export default function ServicesGrid() {
   return (
-    <section id="services" className="py-16">
+    <section id="services" className="py-12 md:py-16">
       <Container>
-        <div className="text-left mb-16">
-          <h2 className="text-section text-foreground mb-4">
+        <div className="text-left mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight text-foreground mb-3 md:mb-4">
             Performance marketing solutions
           </h2>
-          <p className="text-base lg:text-lg text-muted-foreground max-w-lg">
+          <p className="text-base md:text-lg text-muted-foreground max-w-lg">
             We focus on the channels that matter most for your growth stage, with transparent math and realistic expectations.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-              <CardContent className="p-8">
-                <div className={`w-12 h-12 ${service.color} rounded-lg flex items-center justify-center mb-6`}>
+              <CardContent className="p-6 md:p-8">
+                <div className={`w-12 h-12 ${service.color} rounded-lg flex items-center justify-center mb-4 md:mb-6`}>
                   <service.icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-3">
+                <h3 className="text-lg md:text-xl font-semibold text-foreground mb-2 md:mb-3">
                   {service.title}
                 </h3>
-                <p className="text-sm md:text-base text-muted-foreground mb-4">
+                <p className="text-sm md:text-base text-muted-foreground mb-3 md:mb-4 leading-relaxed">
                   {service.description}
                 </p>
                 <Link href="/contact">
-                  <a className="text-primary font-medium hover:text-primary/80 transition-colors">
+                  <a className="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-colors text-sm md:text-base min-h-[44px] py-2">
                     Learn more →
                   </a>
                 </Link>
