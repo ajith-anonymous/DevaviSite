@@ -14,16 +14,16 @@ const solutions = [
   {
     title: 'Media Solution', 
     description: 'Strategic media planning and buying across all channels to maximize reach and optimize your advertising investment.',
-    bgColor: 'bg-card',
-    textColor: 'text-card-foreground',
-    buttonVariant: 'outline' as const,
+    bgColor: 'bg-background',
+    textColor: 'text-muted-foreground',
+    buttonVariant: 'ghost' as const,
   },
   {
     title: 'Research Solution',
     description: 'Deep market research and consumer insights that inform strategy and drive performance improvements.',
-    bgColor: 'bg-card',
-    textColor: 'text-card-foreground', 
-    buttonVariant: 'outline' as const,
+    bgColor: 'bg-background',
+    textColor: 'text-muted-foreground', 
+    buttonVariant: 'ghost' as const,
   },
 ];
 
@@ -71,14 +71,13 @@ export default function Solutions() {
   return (
     <section ref={sectionRef} className="py-16 bg-background overflow-hidden">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto perspective-1000">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 max-w-6xl mx-auto">
           {solutions.map((solution, index) => (
             <div
               key={index}
               ref={(el) => (cardRefs.current[index] = el)}
-              className={`relative ${solution.bgColor} rounded-2xl p-8 h-80 flex flex-col justify-between border-2 border-border group cursor-pointer transform transition-all duration-500 ease-out shadow-xl parallax-card
-                hover:-translate-y-6 hover:rotate-1 hover:shadow-2xl hover:shadow-accent/20
-                ${hoveredCard === index ? 'scale-105 z-10' : hoveredCard !== null ? 'scale-95 opacity-80' : 'scale-100 opacity-100'}
+              className={`relative ${solution.bgColor} p-12 h-96 flex flex-col justify-between group cursor-pointer transition-all duration-500 ease-out
+                ${hoveredCard === index ? 'z-10' : hoveredCard !== null ? 'opacity-40' : 'opacity-100'}
                 animate-slide-up`}
               style={{
                 animationDelay: `${index * 150}ms`,
@@ -88,46 +87,20 @@ export default function Solutions() {
               onMouseLeave={() => setHoveredCard(null)}
               data-testid={`card-solution-${index + 1}`}
             >
-              {/* Enhanced tile background with grid pattern */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              {/* Tile grid effect */}
-              <div 
-                className="absolute inset-0 rounded-2xl opacity-5"
-                style={{
-                  backgroundImage: 'linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent)',
-                  backgroundSize: '50px 50px'
-                }}
-              ></div>
-              
               <div className="flex-1 relative z-10">
-                <h3 className={`text-2xl font-bold ${solution.textColor} mb-4 transform transition-transform duration-300 group-hover:translate-x-2`}>
+                <h3 className={`text-4xl font-bold ${solution.textColor} mb-6 transition-all duration-500 ${hoveredCard === index ? 'opacity-100' : hoveredCard !== null ? 'opacity-30' : 'opacity-80'}`}>
                   {solution.title}
                 </h3>
-                <p className={`${solution.textColor} opacity-80 leading-relaxed transform transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1`}>
+                <p className={`${solution.textColor} leading-relaxed transition-all duration-500 ${hoveredCard === index ? 'opacity-100' : 'opacity-0'}`}>
                   {solution.description}
                 </p>
               </div>
               
-              <div className="flex items-center justify-between mt-6 relative z-10">
-                <Button 
-                  variant={solution.buttonVariant}
-                  className="text-sm font-medium transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg"
-                  data-testid={`button-view-more-${index + 1}`}
-                >
-                  View More
-                </Button>
-                
-                <div className={`w-10 h-10 rounded-full ${solution.bgColor === 'bg-accent' ? 'bg-accent-foreground' : 'bg-accent'} flex items-center justify-center transform transition-all duration-500 group-hover:scale-125 group-hover:rotate-90 group-hover:shadow-lg`}>
-                  <ArrowRight className={`w-5 h-5 ${solution.bgColor === 'bg-accent' ? 'text-accent' : 'text-accent-foreground'} transform transition-transform duration-300 group-hover:translate-x-0.5`} />
+              <div className={`flex items-center justify-end mt-6 relative z-10 transition-all duration-500 ${hoveredCard === index ? 'opacity-100' : 'opacity-0'}`}>
+                <div className={`w-12 h-12 rounded-full ${solution.bgColor === 'bg-accent' ? 'bg-accent-foreground' : 'bg-foreground'} flex items-center justify-center transition-all duration-500 group-hover:scale-110`}>
+                  <ArrowRight className={`w-6 h-6 ${solution.bgColor === 'bg-accent' ? 'text-accent' : 'text-background'}`} />
                 </div>
               </div>
-
-              {/* Enhanced decorative corner elements for tile effect */}
-              <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-accent opacity-20 group-hover:opacity-60 group-hover:scale-150 transition-all duration-300"></div>
-              <div className="absolute top-4 left-4 w-1 h-1 rounded-full bg-accent opacity-10"></div>
-              <div className="absolute bottom-4 right-4 w-1 h-1 rounded-full bg-accent opacity-10"></div>
-              <div className="absolute bottom-4 left-4 w-1 h-1 rounded-full bg-accent opacity-10"></div>
             </div>
           ))}
         </div>
