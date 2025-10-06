@@ -29,11 +29,25 @@ const solutions = [
 
 export default function Solutions() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const rafId = useRef<number>();
 
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       if (rafId.current) {
         cancelAnimationFrame(rafId.current);
@@ -66,38 +80,41 @@ export default function Solutions() {
         }
       };
     }
-  }, []);
+  }, [isMobile]);
 
   return (
-    <section ref={sectionRef} className="py-16 bg-background overflow-hidden">
+    <section ref={sectionRef} className="py-12 md:py-16 bg-background overflow-hidden">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 max-w-6xl mx-auto">
           {solutions.map((solution, index) => (
             <div
               key={index}
               ref={(el) => (cardRefs.current[index] = el)}
-              className={`relative ${solution.bgColor} p-12 h-96 flex flex-col justify-between group cursor-pointer transition-all duration-500 ease-out
-                ${hoveredCard === index ? 'z-10' : hoveredCard !== null ? 'opacity-40' : 'opacity-100'}
+              className={`relative ${solution.bgColor} p-8 md:p-12 min-h-[320px] md:h-96 flex flex-col justify-between group cursor-pointer transition-all duration-500 ease-out
+                ${hoveredCard === index ? 'z-10' : hoveredCard !== null ? 'md:opacity-40 opacity-100' : 'opacity-100'}
                 animate-slide-up`}
               style={{
                 animationDelay: `${index * 150}ms`,
-                willChange: 'transform',
+                willChange: isMobile ? 'auto' : 'transform',
               }}
-              onMouseEnter={() => setHoveredCard(index)}
-              onMouseLeave={() => setHoveredCard(null)}
+              onMouseEnter={() => !isMobile && setHoveredCard(index)}
+              onMouseLeave={() => !isMobile && setHoveredCard(null)}
               data-testid={`card-solution-${index + 1}`}
             >
               <div className="flex-1 relative z-10">
-                <h3 className={`text-4xl font-bold ${solution.textColor} mb-6 transition-all duration-500 ${hoveredCard === index ? 'opacity-100' : hoveredCard !== null ? 'opacity-30' : 'opacity-80'}`}>
+                <h3 className={`text-3xl md:text-4xl font-bold ${solution.textColor} mb-4 md:mb-6 transition-all duration-500 
+                  ${hoveredCard === index ? 'opacity-100' : hoveredCard !== null ? 'md:opacity-30 opacity-80' : 'opacity-80'}`}>
                   {solution.title}
                 </h3>
-                <p className={`${solution.textColor} leading-relaxed transition-all duration-500 ${hoveredCard === index ? 'opacity-100' : 'opacity-0'}`}>
+                <p className={`${solution.textColor} text-sm md:text-base leading-relaxed transition-all duration-500 
+                  ${hoveredCard === index || isMobile ? 'opacity-100' : 'opacity-0'}`}>
                   {solution.description}
                 </p>
               </div>
               
-              <div className={`flex items-center justify-end mt-6 relative z-10 transition-all duration-500 ${hoveredCard === index ? 'opacity-100' : 'opacity-0'}`}>
-                <div className={`w-12 h-12 rounded-full ${solution.bgColor === 'bg-accent' ? 'bg-accent-foreground' : 'bg-foreground'} flex items-center justify-center transition-all duration-500 group-hover:scale-110`}>
+              <div className={`flex items-center justify-end mt-6 relative z-10 transition-all duration-500 
+                ${hoveredCard === index || isMobile ? 'opacity-100' : 'opacity-0'}`}>
+                <div className={`w-12 h-12 md:w-12 md:h-12 rounded-full ${solution.bgColor === 'bg-accent' ? 'bg-accent-foreground' : 'bg-foreground'} flex items-center justify-center transition-all duration-500 group-hover:scale-110`}>
                   <ArrowRight className={`w-6 h-6 ${solution.bgColor === 'bg-accent' ? 'text-accent' : 'text-background'}`} />
                 </div>
               </div>
@@ -106,18 +123,20 @@ export default function Solutions() {
         </div>
         
         {/* Enhanced Navigation arrows */}
-        <div className="flex justify-center mt-12 gap-4">
+        <div className="flex justify-center mt-8 md:mt-12 gap-3 md:gap-4">
           <button 
-            className="w-12 h-12 rounded-full border-2 border-accent/30 bg-background hover:bg-accent hover:border-accent flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg group"
+            className="w-11 h-11 md:w-12 md:h-12 rounded-full border-2 border-accent/30 bg-background hover:bg-accent hover:border-accent flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg group active:scale-95"
             data-testid="button-nav-previous"
+            aria-label="Previous solution"
           >
-            <ChevronLeft className="w-6 h-6 text-foreground group-hover:text-accent-foreground group-hover:-translate-x-0.5 transition-all duration-300" />
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-foreground group-hover:text-accent-foreground group-hover:-translate-x-0.5 transition-all duration-300" />
           </button>
           <button 
-            className="w-12 h-12 rounded-full border-2 border-accent/30 bg-background hover:bg-accent hover:border-accent flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg group"
+            className="w-11 h-11 md:w-12 md:h-12 rounded-full border-2 border-accent/30 bg-background hover:bg-accent hover:border-accent flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg group active:scale-95"
             data-testid="button-nav-next"
+            aria-label="Next solution"
           >
-            <ChevronRight className="w-6 h-6 text-foreground group-hover:text-accent-foreground group-hover:translate-x-0.5 transition-all duration-300" />
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-foreground group-hover:text-accent-foreground group-hover:translate-x-0.5 transition-all duration-300" />
           </button>
         </div>
       </Container>
