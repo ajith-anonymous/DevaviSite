@@ -41,11 +41,11 @@ export default function Footer() {
   return (
     <footer className="bg-slate-900 text-white">
       <Container>
-        <div className="section-padding">
-          <div className="grid md:grid-cols-4 gap-8">
+        <div className="py-12 md:py-16 lg:py-20">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
             <div className="md:col-span-2">
-              <div className="text-2xl font-bold mb-4">Devavi Media</div>
-              <p className="text-slate-300 mb-6 max-w-md">
+              <div className="text-xl md:text-2xl font-bold mb-3 md:mb-4">Devavi Media</div>
+              <p className="text-slate-300 mb-6 max-w-md text-sm md:text-base leading-relaxed">
                 Performance marketing agency focused on clarity, transparency, and results that actually move the needle.
               </p>
               <div className="flex space-x-4">
@@ -53,7 +53,7 @@ export default function Footer() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="text-slate-400 hover:text-white transition-colors"
+                    className="text-slate-400 hover:text-white transition-colors p-2 -m-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
                     aria-label={item.name}
                   >
                     <item.icon className="h-6 w-6" />
@@ -63,12 +63,12 @@ export default function Footer() {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold mb-4">Services</h3>
-              <ul className="space-y-2 text-slate-300">
+              <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4">Services</h3>
+              <ul className="space-y-3 md:space-y-2 text-slate-300 text-sm md:text-base">
                 {footerNavigation.services.map((item) => (
                   <li key={item.name}>
                     <Link href={item.href}>
-                      <a className="hover:text-white transition-colors">
+                      <a className="hover:text-white transition-colors inline-block py-1 min-h-[44px] md:min-h-0 flex items-center">
                         {item.name}
                       </a>
                     </Link>
@@ -78,12 +78,12 @@ export default function Footer() {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold mb-4">Company</h3>
-              <ul className="space-y-2 text-slate-300">
+              <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4">Company</h3>
+              <ul className="space-y-3 md:space-y-2 text-slate-300 text-sm md:text-base">
                 {footerNavigation.company.map((item) => (
                   <li key={item.name}>
                     <Link href={item.href}>
-                      <a className="hover:text-white transition-colors">
+                      <a className="hover:text-white transition-colors inline-block py-1 min-h-[44px] md:min-h-0 flex items-center">
                         {item.name}
                       </a>
                     </Link>
@@ -93,11 +93,11 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="border-t border-slate-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-slate-400 text-sm">
+          <div className="border-t border-slate-700 mt-10 md:mt-12 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
+            <p className="text-slate-400 text-xs md:text-sm text-center md:text-left">
               © 2024 Devavi Media. All rights reserved.
             </p>
-            <p className="text-slate-400 text-sm mt-4 md:mt-0">
+            <p className="text-slate-400 text-xs md:text-sm text-center md:text-left">
               Made with ❤️ by founders, for founders.
             </p>
           </div>

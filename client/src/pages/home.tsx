@@ -12,17 +12,17 @@ import { Link } from 'wouter';
 // CTA Band Component
 function CTABand() {
   return (
-    <section className="py-12 bg-primary">
+    <section className="py-12 md:py-16 bg-primary">
       <Container>
         <div className="text-left">
-          <h2 className="text-section font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight text-white mb-3 md:mb-4">
             Ready to ditch the circus?
           </h2>
-          <p className="text-base lg:text-lg text-primary-foreground/80 mb-8 max-w-lg">
+          <p className="text-sm md:text-base lg:text-lg text-primary-foreground/80 mb-6 md:mb-8 max-w-lg leading-relaxed">
             Join the founders who chose clarity over chaos. Let's build performance marketing that actually performs.
           </p>
           <Link href="/contact">
-            <Button variant="secondary" size="lg">
+            <Button variant="secondary" size="lg" className="min-h-[48px] px-6 md:px-8 text-base">
               Start the conversation
             </Button>
           </Link>
@@ -92,7 +92,7 @@ export default function Home() {
         <Hero />
         <Metrics />
         <Solutions />
-        <div className="py-20">
+        <div className="py-12 md:py-20">
           <ServicesGrid />
         </div>
         <CTABand />
