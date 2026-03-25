@@ -17,15 +17,15 @@ const metrics = [
 
 export default function Metrics() {
   return (
-    <section className="py-12 md:py-16 bg-background">
+    <section className="py-14 md:py-20 border-y border-border/50">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 max-w-3xl">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-4 max-w-4xl">
           {metrics.map((metric, index) => (
-            <div key={index} className="text-left">
-              <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-2">
+            <div key={index} className="text-left md:pl-10 first:pl-0 md:border-l md:first:border-l-0 border-border/40">
+              <div className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-1 text-glow-amber">
                 {metric.value}
               </div>
-              <div className="text-sm md:text-sm uppercase tracking-wide text-muted-foreground">
+              <div className="text-xs md:text-sm font-medium uppercase tracking-widest text-muted-foreground">
                 {metric.label}
               </div>
             </div>

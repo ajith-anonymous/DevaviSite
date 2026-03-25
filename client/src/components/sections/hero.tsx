@@ -3,46 +3,68 @@ import Typewriter from '@/components/ui/typewriter';
 
 export default function Hero() {
   return (
-    <section className="relative py-16 md:py-24 lg:py-32 overflow-hidden">
+    <section className="relative py-20 md:py-32 lg:py-40 overflow-hidden">
+      {/* Background grid */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-100 -z-10" />
+
+      {/* Ambient glow blobs */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-accent/5 blur-[120px] animate-pulse-slow" />
+        <div className="absolute top-20 right-0 w-[400px] h-[400px] rounded-full bg-accent/4 blur-[100px] animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-0 left-1/3 w-[350px] h-[350px] rounded-full bg-accent/3 blur-[80px]" />
+      </div>
+
       <Container>
-        <div className="text-left">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-foreground mb-4 md:mb-6">
-            Performance marketing,<br />
-            <span className="text-accent">
-              <Typewriter 
-                text="minus the circus" 
-                typeSpeed={80} 
+        <div className="text-left max-w-5xl">
+          {/* Label */}
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-3 py-1.5 mb-8 md:mb-10">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+            <span className="text-xs font-medium text-muted-foreground uppercase tracking-widest">
+              Performance Marketing Agency
+            </span>
+          </div>
+
+          <h1 className="text-hero text-foreground mb-6 md:mb-8">
+            Performance marketing,{' '}
+            <br className="hidden sm:block" />
+            <span className="text-accent text-glow-amber">
+              <Typewriter
+                text="minus the circus"
+                typeSpeed={80}
                 backspaceSpeed={50}
-                delay={500} 
+                delay={500}
                 pauseDuration={2000}
                 loop={true}
               />
             </span>
           </h1>
-          <p className="text-base md:text-lg text-muted-foreground mb-8 md:mb-10 max-w-lg leading-relaxed">
-            Co-founder-led execution, ruthless clarity, results you can actually ship. 
+
+          <p className="text-base md:text-xl text-muted-foreground mb-10 md:mb-14 max-w-xl leading-relaxed">
+            Co-founder-led execution, ruthless clarity, results you can actually ship.
             We work with no more than 20 clients to ensure deep involvement and attention to detail.
           </p>
-          <div className="mb-12 md:mb-20">
-            <div className="text-left mb-6 md:mb-8">
-              <p className="text-xs md:text-sm font-medium text-muted-foreground uppercase tracking-wide">
-                Trusted by teams who value clarity
-              </p>
-            </div>
-            
-            <div className="overflow-hidden whitespace-nowrap">
+
+          {/* Trusted by */}
+          <div className="mb-0">
+            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-6">
+              Trusted by teams who value clarity
+            </p>
+            <div className="overflow-hidden whitespace-nowrap relative">
+              {/* Fade edges */}
+              <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
               <div className="flex animate-scroll">
                 {Array.from({ length: 8 }).map((_, i) => (
-                  <div key={i} className="flex items-center justify-center flex-shrink-0 mx-4 md:mx-8">
-                    <div className="w-24 h-12 md:w-32 md:h-16 bg-muted-foreground/20 rounded-md flex items-center justify-center border border-border">
-                      <span className="text-xs text-muted-foreground font-medium">Client Logo {i + 1}</span>
+                  <div key={i} className="flex items-center justify-center flex-shrink-0 mx-4 md:mx-6">
+                    <div className="w-24 h-10 md:w-28 md:h-12 glass-card rounded-lg flex items-center justify-center">
+                      <span className="text-xs text-muted-foreground/60 font-medium">Client {i + 1}</span>
                     </div>
                   </div>
                 ))}
                 {Array.from({ length: 8 }).map((_, i) => (
-                  <div key={`duplicate-${i}`} className="flex items-center justify-center flex-shrink-0 mx-4 md:mx-8">
-                    <div className="w-24 h-12 md:w-32 md:h-16 bg-muted-foreground/20 rounded-md flex items-center justify-center border border-border">
-                      <span className="text-xs text-muted-foreground font-medium">Client Logo {i + 1}</span>
+                  <div key={`dup-${i}`} className="flex items-center justify-center flex-shrink-0 mx-4 md:mx-6">
+                    <div className="w-24 h-10 md:w-28 md:h-12 glass-card rounded-lg flex items-center justify-center">
+                      <span className="text-xs text-muted-foreground/60 font-medium">Client {i + 1}</span>
                     </div>
                   </div>
                 ))}
@@ -51,13 +73,6 @@ export default function Hero() {
           </div>
         </div>
       </Container>
-
-      {/* Background decoration */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-96 md:h-96 bg-primary/5 rounded-full opacity-20 animate-float"></div>
-        <div className="absolute top-1/4 right-1/4 w-24 h-24 md:w-32 md:h-32 bg-accent/10 rounded-full opacity-30"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-32 h-32 md:w-48 md:h-48 bg-primary/10 rounded-full opacity-15"></div>
-      </div>
     </section>
   );
 }
