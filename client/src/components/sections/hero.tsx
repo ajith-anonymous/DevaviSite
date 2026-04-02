@@ -17,8 +17,8 @@ export default function Hero() {
           src="/devavi-signature.png"
           alt=""
           aria-hidden="true"
-          className="w-[55vw] max-w-[620px] opacity-20 select-none"
-          style={{ mixBlendMode: 'screen' }}
+          className="w-[55vw] max-w-[620px] opacity-[0.35] select-none"
+          style={{ filter: 'grayscale(1) brightness(6)', mixBlendMode: 'screen' }}
         />
       </div>
 
