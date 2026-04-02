@@ -34,7 +34,19 @@ export default function Hero() {
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-foreground mb-6 md:mb-8">
-            Performance Marketing<br />Built to Scale Your Brand.
+            Performance Marketing<br />Built to{' '}
+            <span
+              className="relative inline-block"
+              style={{
+                background: 'linear-gradient(135deg, hsl(265,90%,72%) 0%, hsl(280,85%,65%) 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                filter: 'drop-shadow(0 0 24px hsl(265,90%,68% / 0.55))',
+              }}
+            >
+              Scale Your Brand.
+            </span>
           </h1>
 
           {/* Trusted by */}
