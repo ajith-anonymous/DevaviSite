@@ -1,6 +1,70 @@
 import { useEffect } from 'react';
 import Header from '@/components/layout/header';
 import Hero from '@/components/sections/hero';
+import Container from '@/components/ui/container';
+
+const googleItems = [
+  'Search Campaigns',
+  'Performance Max',
+  'Shopping Campaigns',
+  'Display & Remarketing',
+  'Campaign Setup & Structure',
+  'Ongoing Optimisation',
+  'Budget Management',
+  'Performance Reporting',
+];
+
+const metaItems = [
+  'Feed & Story Ads',
+  'Reels Campaigns',
+  'Retargeting & Lookalikes',
+  'Audience Strategy',
+  'Campaign Setup & Structure',
+  'Ongoing Optimisation',
+  'Budget Management',
+  'Performance Reporting',
+];
+
+function ServicesSection() {
+  return (
+    <section id="services" className="py-16 md:py-24 bg-background">
+      <Container>
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">Our Services</h2>
+        <p className="text-muted-foreground text-base md:text-lg mb-10">
+          Google and Meta, managed end-to-end. No handoffs, no gaps, no guesswork.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Google Ads */}
+          <div className="rounded-xl border border-accent/40 bg-secondary/30 p-7 backdrop-blur-sm">
+            <p className="text-xs font-bold text-accent uppercase tracking-widest mb-1">Google Ads</p>
+            <p className="text-sm text-muted-foreground mb-5">Search, Shopping & Display</p>
+            <ul className="space-y-2">
+              {googleItems.map((item) => (
+                <li key={item} className="flex items-center gap-2 text-sm text-foreground">
+                  <span className="w-1.5 h-1.5 rounded-full bg-foreground/40 flex-shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          {/* Meta Ads */}
+          <div className="rounded-xl border border-accent/40 bg-secondary/30 p-7 backdrop-blur-sm">
+            <p className="text-xs font-bold text-accent uppercase tracking-widest mb-1">Meta Ads</p>
+            <p className="text-sm text-muted-foreground mb-5">Feed, Reels & Retargeting</p>
+            <ul className="space-y-2">
+              {metaItems.map((item) => (
+                <li key={item} className="flex items-center gap-2 text-sm text-foreground">
+                  <span className="w-1.5 h-1.5 rounded-full bg-foreground/40 flex-shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
 
 export default function Home() {
   useEffect(() => {
@@ -48,6 +112,7 @@ export default function Home() {
       <Header />
       <main id="main-content">
         <Hero />
+        <ServicesSection />
       </main>
     </>
   );
