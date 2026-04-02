@@ -39,7 +39,7 @@ export default function Hero() {
             </span>
           </div>
 
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-foreground mb-6 md:mb-8">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-foreground mb-6 md:mb-8">
             Performance Marketing<br />Built to Scale Your Brand.
           </h1>
 
