@@ -1,23 +1,11 @@
 import Container from '@/components/ui/container';
 import Typewriter from '@/components/ui/typewriter';
-import logoPath from '/devavi-logo.png';
 
 export default function Hero() {
   return (
     <section className="relative py-20 md:py-32 lg:py-40 overflow-hidden">
       {/* Background grid */}
       <div className="absolute inset-0 bg-grid-pattern opacity-100 -z-10" />
-
-      {/* Logo watermark */}
-      <div className="absolute inset-0 -z-10 flex items-center justify-end pointer-events-none overflow-hidden">
-        <img
-          src={logoPath}
-          alt=""
-          aria-hidden="true"
-          className="w-[60vw] max-w-[700px] opacity-[0.04] select-none"
-          style={{ filter: 'brightness(0) invert(1)' }}
-        />
-      </div>
 
       {/* Ambient glow blobs */}
       <div className="absolute inset-0 -z-10 overflow-hidden">

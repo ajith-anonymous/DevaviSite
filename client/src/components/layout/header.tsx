@@ -14,16 +14,12 @@ export default function Header() {
       <header className="sticky top-0 z-40 border-b border-border/50 bg-background/80 backdrop-blur-xl">
         <Container>
           <div className="flex justify-between items-center h-14 md:h-16">
-            {/* Logo + wordmark */}
-            <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity min-h-[44px]">
-              <img
-                src="/devavi-logo.png"
-                alt=""
-                aria-hidden="true"
-                className="h-7 md:h-8 w-auto"
-                style={{ filter: 'brightness(0) invert(1)' }}
-              />
-              <span className="text-sm md:text-base font-semibold text-foreground tracking-wide">
+            {/* Wordmark */}
+            <Link href="/" className="hover:opacity-80 transition-opacity min-h-[44px] flex items-center">
+              <span
+                className="text-foreground uppercase tracking-widest text-base md:text-lg font-bold"
+                style={{ fontFamily: "'Open Sans Condensed', sans-serif" }}
+              >
                 Devavi Media
               </span>
             </Link>
