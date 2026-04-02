@@ -3,6 +3,11 @@ import Container from '@/components/ui/container';
 const clientLogos = [
   { name: 'Fix My Curls', src: '/client-fixmycurls.png' },
   { name: 'Goat Life', src: '/client-goatlife.png' },
+  { name: 'ekatra', src: '/client-ekatra.png' },
+  { name: 'A Toddler Thing', src: '/client-toddlerthing.png' },
+  { name: 'suvāa', src: '/client-suvaa.png' },
+  { name: 'born plus', src: '/client-bornplus.png' },
+  { name: 'Angel & Rocket', src: '/client-angelrocket.png' },
 ];
 
 export default function Hero() {
@@ -53,7 +58,7 @@ export default function Hero() {
               <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
               <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
               <div className="flex items-center animate-scroll">
-                {[...clientLogos, ...clientLogos].map((logo, i) => (
+                {[...clientLogos, ...clientLogos, ...clientLogos].map((logo, i) => (
                   <div key={i} className="flex items-center justify-center flex-shrink-0 mx-8 md:mx-12">
                     <img
                       src={logo.src}
