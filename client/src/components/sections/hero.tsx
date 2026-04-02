@@ -46,23 +46,6 @@ export default function Hero() {
               }}
             >
               Scale Your Brand.
-              <svg
-                viewBox="0 0 420 18"
-                xmlns="http://www.w3.org/2000/svg"
-                className="absolute left-0 w-full"
-                style={{ top: '100%', marginTop: '2px' }}
-                preserveAspectRatio="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M4 12 C60 4, 140 16, 210 10 C280 4, 360 14, 416 8"
-                  stroke="white"
-                  strokeWidth="3.5"
-                  strokeLinecap="round"
-                  fill="none"
-                  opacity="0.9"
-                />
-              </svg>
             </span>
           </h1>
 
