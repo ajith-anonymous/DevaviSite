@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-grid-pattern opacity-100 -z-10" />
 
       {/* Signature watermark */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden flex items-center justify-end" style={{ zIndex: 0 }}>
+      <div className="absolute inset-x-0 top-0 bottom-1/3 pointer-events-none overflow-hidden flex items-center justify-end" style={{ zIndex: 0 }}>
         <img
           src="/devavi-signature.png"
           alt=""
