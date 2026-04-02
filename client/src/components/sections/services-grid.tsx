@@ -37,9 +37,9 @@ const services = [
 
 export default function ServicesGrid() {
   return (
-    <section id="services" className="py-16 md:py-24 bg-background">
+    <section id="services" className="py-12 md:py-16 bg-background">
       <Container>
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 md:mb-20">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-12">
           <div>
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-3">What we do</p>
             <h2 className="text-section text-foreground max-w-sm">

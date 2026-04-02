@@ -7,7 +7,7 @@ const clientLogos = [
 
 export default function Hero() {
   return (
-    <section className="relative py-20 md:py-32 lg:py-40 overflow-hidden">
+    <section className="relative pt-10 pb-12 md:pt-14 md:pb-16 overflow-hidden">
       {/* Background grid */}
       <div className="absolute inset-0 bg-grid-pattern opacity-100 -z-10" />
 
@@ -32,14 +32,14 @@ export default function Hero() {
       <Container className="relative z-10">
         <div className="text-left max-w-5xl">
           {/* Label */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-3 py-1.5 mb-8 md:mb-10">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-3 py-1.5 mb-5 md:mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
             <span className="text-xs font-medium text-muted-foreground uppercase tracking-widest">
               Performance Marketing Agency
             </span>
           </div>
 
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-foreground mb-10 md:mb-14">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-foreground mb-6 md:mb-8">
             Performance Marketing<br />Built to Scale Your Brand.
           </h1>
 

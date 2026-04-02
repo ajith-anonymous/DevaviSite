@@ -17,7 +17,7 @@ const metrics = [
 
 export default function Metrics() {
   return (
-    <section className="py-14 md:py-20 border-y border-border/50">
+    <section className="py-10 md:py-14 border-y border-border/50">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-4 max-w-4xl">
           {metrics.map((metric, index) => (
