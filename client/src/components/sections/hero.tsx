@@ -11,6 +11,17 @@ export default function Hero() {
       {/* Background grid */}
       <div className="absolute inset-0 bg-grid-pattern opacity-100 -z-10" />
 
+      {/* Signature watermark */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden flex items-center justify-end" style={{ zIndex: 0 }}>
+        <img
+          src="/devavi-signature.png"
+          alt=""
+          aria-hidden="true"
+          className="w-[55vw] max-w-[620px] opacity-20 select-none"
+          style={{ mixBlendMode: 'screen' }}
+        />
+      </div>
+
       {/* Ambient glow blobs */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-accent/5 blur-[120px] animate-pulse-slow" />
@@ -18,7 +29,7 @@ export default function Hero() {
         <div className="absolute bottom-0 left-1/3 w-[350px] h-[350px] rounded-full bg-accent/3 blur-[80px]" />
       </div>
 
-      <Container>
+      <Container className="relative z-10">
         <div className="text-left max-w-5xl">
           {/* Label */}
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-3 py-1.5 mb-8 md:mb-10">
