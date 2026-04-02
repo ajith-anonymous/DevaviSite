@@ -24,6 +24,18 @@ export default function Header() {
               </span>
             </Link>
 
+            {/* Nav */}
+            <nav className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
+              <Link href="/services" className="hover:text-foreground transition-colors">Services</Link>
+              <Link href="/process" className="hover:text-foreground transition-colors">Process</Link>
+              <Link href="/work" className="hover:text-foreground transition-colors">Work</Link>
+              <Link href="/contact" className="hover:text-foreground transition-colors">Contact</Link>
+            </nav>
+
+            {/* Mobile nav toggle placeholder — collapsed on small screens */}
+            <nav className="md:hidden flex items-center gap-4 text-xs text-muted-foreground">
+              <Link href="/contact" className="hover:text-foreground transition-colors">Contact</Link>
+            </nav>
           </div>
         </Container>
       </header>
