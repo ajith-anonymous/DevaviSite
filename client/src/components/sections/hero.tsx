@@ -1,6 +1,10 @@
 import Container from '@/components/ui/container';
 import Typewriter from '@/components/ui/typewriter';
 
+const clientLogos = [
+  { name: 'Goat Life', src: '/client-goatlife.png' },
+];
+
 export default function Hero() {
   return (
     <section className="relative py-20 md:py-32 lg:py-40 overflow-hidden">
@@ -53,19 +57,15 @@ export default function Hero() {
               {/* Fade edges */}
               <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
               <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-              <div className="flex animate-scroll">
-                {Array.from({ length: 8 }).map((_, i) => (
-                  <div key={i} className="flex items-center justify-center flex-shrink-0 mx-4 md:mx-6">
-                    <div className="w-24 h-10 md:w-28 md:h-12 glass-card rounded-lg flex items-center justify-center">
-                      <span className="text-xs text-muted-foreground/60 font-medium">Client {i + 1}</span>
-                    </div>
-                  </div>
-                ))}
-                {Array.from({ length: 8 }).map((_, i) => (
-                  <div key={`dup-${i}`} className="flex items-center justify-center flex-shrink-0 mx-4 md:mx-6">
-                    <div className="w-24 h-10 md:w-28 md:h-12 glass-card rounded-lg flex items-center justify-center">
-                      <span className="text-xs text-muted-foreground/60 font-medium">Client {i + 1}</span>
-                    </div>
+              <div className="flex items-center animate-scroll">
+                {[...clientLogos, ...clientLogos].map((logo, i) => (
+                  <div key={i} className="flex items-center justify-center flex-shrink-0 mx-8 md:mx-12">
+                    <img
+                      src={logo.src}
+                      alt={logo.name}
+                      className="h-8 md:h-10 w-auto max-w-[120px] object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+                      style={{ filter: 'brightness(0) invert(1)' }}
+                    />
                   </div>
                 ))}
               </div>
