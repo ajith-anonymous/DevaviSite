@@ -4,7 +4,6 @@ import Footer from '@/components/layout/footer';
 import Hero from '@/components/sections/hero';
 import ServicesGrid from '@/components/sections/services-grid';
 import Metrics from '@/components/sections/metrics';
-import Solutions from '@/components/sections/solutions';
 import Container from '@/components/ui/container';
 import { Link } from 'wouter';
 import { ArrowRight } from 'lucide-react';
@@ -86,7 +85,6 @@ export default function Home() {
       <main id="main-content">
         <Hero />
         <Metrics />
-        <Solutions />
         <ServicesGrid />
         <CTABand />
       </main>
