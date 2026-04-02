@@ -5,26 +5,33 @@ import Hero from '@/components/sections/hero';
 import ServicesGrid from '@/components/sections/services-grid';
 import Metrics from '@/components/sections/metrics';
 import Solutions from '@/components/sections/solutions';
-import { Button } from '@/components/ui/button';
 import Container from '@/components/ui/container';
 import { Link } from 'wouter';
+import { ArrowRight } from 'lucide-react';
 
-// CTA Band Component
 function CTABand() {
   return (
-    <section className="py-12 md:py-16 bg-primary">
+    <section className="relative py-20 md:py-32 overflow-hidden bg-background border-t border-border">
+      {/* Background glow */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-accent/8 blur-[120px] rounded-full" />
+      </div>
+
       <Container>
-        <div className="text-left">
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight text-white mb-3 md:mb-4">
-            Ready to ditch the circus?
+        <div className="max-w-3xl">
+          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-6">Ready to start?</p>
+          <h2 className="text-section text-foreground mb-6">
+            Ready to ditch <span className="text-accent">the circus?</span>
           </h2>
-          <p className="text-sm md:text-base lg:text-lg text-primary-foreground/80 mb-6 md:mb-8 max-w-lg leading-relaxed">
-            Join the founders who chose clarity over chaos. Let's build performance marketing that actually performs.
+          <p className="text-base md:text-lg text-muted-foreground mb-10 max-w-lg leading-relaxed">
+            Join the founders who chose clarity over chaos. We take on fewer clients on purpose — every account gets our full attention.
           </p>
-          <Link href="/contact">
-            <Button variant="secondary" size="lg" className="min-h-[48px] px-6 md:px-8 text-base">
-              Start the conversation
-            </Button>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-3 bg-accent text-accent-foreground font-semibold px-7 py-4 rounded-full hover:bg-accent/90 transition-all duration-300 hover:gap-4 group text-sm md:text-base"
+          >
+            Start the conversation
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </div>
       </Container>
@@ -34,10 +41,8 @@ function CTABand() {
 
 export default function Home() {
   useEffect(() => {
-    // Set page title and meta description
     document.title = 'Devavi Media - Performance Marketing, Minus the Circus';
-    
-    // Add meta description
+
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Co-founder-led performance marketing agency delivering ruthless clarity and results that actually move the needle. Limited clients, unlimited focus.');
@@ -48,7 +53,6 @@ export default function Home() {
       document.head.appendChild(meta);
     }
 
-    // Add structured data
     const structuredData = {
       '@context': 'https://schema.org',
       '@type': 'Organization',
@@ -56,19 +60,13 @@ export default function Home() {
       url: window.location.origin,
       description: 'Performance marketing agency focused on clarity, transparency, and hands-on execution',
       founders: [
-        {
-          '@type': 'Person',
-          name: 'Swastik Dubey'
-        },
-        {
-          '@type': 'Person', 
-          name: 'Anushka Sirohi'
-        }
+        { '@type': 'Person', name: 'Swastik Dubey' },
+        { '@type': 'Person', name: 'Anushka Sirohi' },
       ],
       sameAs: [
         'https://linkedin.com/company/devavi-media',
-        'https://twitter.com/devavimedia'
-      ]
+        'https://twitter.com/devavimedia',
+      ],
     };
 
     const scriptTag = document.createElement('script');
@@ -77,11 +75,8 @@ export default function Home() {
     document.head.appendChild(scriptTag);
 
     return () => {
-      // Cleanup structured data on unmount
       const existingScript = document.querySelector('script[type="application/ld+json"]');
-      if (existingScript) {
-        document.head.removeChild(existingScript);
-      }
+      if (existingScript) document.head.removeChild(existingScript);
     };
   }, []);
 
@@ -92,9 +87,7 @@ export default function Home() {
         <Hero />
         <Metrics />
         <Solutions />
-        <div className="py-12 md:py-20">
-          <ServicesGrid />
-        </div>
+        <ServicesGrid />
         <CTABand />
       </main>
       <Footer />

@@ -39,37 +39,39 @@ const footerNavigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-white">
+    <footer className="bg-card border-t border-border">
       <Container>
-        <div className="py-12 md:py-16 lg:py-20">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
+        <div className="py-14 md:py-20">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8 mb-14 md:mb-16">
+            {/* Brand */}
             <div className="md:col-span-2">
-              <div className="text-xl md:text-2xl font-bold mb-3 md:mb-4">Devavi Media</div>
-              <p className="text-slate-300 mb-6 max-w-md text-sm md:text-base leading-relaxed">
-                Performance marketing agency focused on clarity, transparency, and results that actually move the needle.
+              <div className="text-lg font-bold text-foreground mb-3">Devavi Media</div>
+              <p className="text-sm text-muted-foreground mb-6 max-w-xs leading-relaxed">
+                Performance marketing with ruthless clarity. Co-founder-led. Limited clients. Unlimited focus.
               </p>
-              <div className="flex space-x-4">
+              <div className="flex gap-2">
                 {footerNavigation.social.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
-                    className="text-slate-400 hover:text-white transition-colors p-2 -m-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
                     aria-label={item.name}
+                    className="w-9 h-9 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-accent/40 transition-all duration-200"
                   >
-                    <item.icon className="h-6 w-6" />
+                    <item.icon className="h-4 w-4" />
                   </a>
                 ))}
               </div>
             </div>
 
+            {/* Services */}
             <div>
-              <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4">Services</h3>
-              <ul className="space-y-3 md:space-y-2 text-slate-300 text-sm md:text-base">
+              <h3 className="text-xs font-semibold text-foreground uppercase tracking-widest mb-4">Services</h3>
+              <ul className="space-y-2.5">
                 {footerNavigation.services.map((item) => (
                   <li key={item.name}>
-                    <Link 
+                    <Link
                       href={item.href}
-                      className="hover:text-white transition-colors inline-block py-1 min-h-[44px] md:min-h-0 flex items-center"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
                     >
                       {item.name}
                     </Link>
@@ -78,14 +80,15 @@ export default function Footer() {
               </ul>
             </div>
 
+            {/* Company */}
             <div>
-              <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4">Company</h3>
-              <ul className="space-y-3 md:space-y-2 text-slate-300 text-sm md:text-base">
+              <h3 className="text-xs font-semibold text-foreground uppercase tracking-widest mb-4">Company</h3>
+              <ul className="space-y-2.5">
                 {footerNavigation.company.map((item) => (
                   <li key={item.name}>
-                    <Link 
+                    <Link
                       href={item.href}
-                      className="hover:text-white transition-colors inline-block py-1 min-h-[44px] md:min-h-0 flex items-center"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
                     >
                       {item.name}
                     </Link>
@@ -95,12 +98,12 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="border-t border-slate-700 mt-10 md:mt-12 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
-            <p className="text-slate-400 text-xs md:text-sm text-center md:text-left">
+          <div className="border-t border-border pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+            <p className="text-xs text-muted-foreground">
               © 2024 Devavi Media. All rights reserved.
             </p>
-            <p className="text-slate-400 text-xs md:text-sm text-center md:text-left">
-              Made with ❤️ by founders, for founders.
+            <p className="text-xs text-muted-foreground">
+              Made by founders, for founders.
             </p>
           </div>
         </div>

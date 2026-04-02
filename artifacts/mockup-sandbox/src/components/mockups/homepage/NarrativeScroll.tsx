@@ -100,7 +100,7 @@ export default function NarrativeScroll() {
         {/* Progress Fill */}
         <div 
           className="absolute top-0 left-0 w-full bg-[#FFB830] transition-all duration-700 ease-out"
-          style={{ height: \`\${((activeChapter) / (chapters.length - 1)) * 100}%\` }}
+          style={{ height: `${((activeChapter) / (chapters.length - 1)) * 100}%` }}
         />
         
         {chapters.map((chap, i) => (
