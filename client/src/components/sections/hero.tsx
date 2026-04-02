@@ -1,5 +1,4 @@
 import Container from '@/components/ui/container';
-import Typewriter from '@/components/ui/typewriter';
 
 const clientLogos = [
   { name: 'Fix My Curls', src: '/client-fixmycurls.png' },
@@ -30,18 +29,7 @@ export default function Hero() {
           </div>
 
           <h1 className="text-hero text-foreground mb-6 md:mb-8">
-            Performance marketing,{' '}
-            <br className="hidden sm:block" />
-            <span className="text-accent text-glow-amber">
-              <Typewriter
-                text="minus the circus"
-                typeSpeed={80}
-                backspaceSpeed={50}
-                delay={500}
-                pauseDuration={2000}
-                loop={true}
-              />
-            </span>
+            Performance Marketing Built to Scale Your Brand.
           </h1>
 
           <p className="text-base md:text-xl text-muted-foreground mb-10 md:mb-14 max-w-xl leading-relaxed">
