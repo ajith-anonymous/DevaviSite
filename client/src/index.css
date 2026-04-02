@@ -11,20 +11,20 @@
   --card-foreground: hsl(220, 15%, 95%);
   --popover: hsl(220, 18%, 9%);
   --popover-foreground: hsl(220, 15%, 95%);
-  --primary: hsl(273, 85%, 82%);
-  --primary-foreground: hsl(220, 20%, 6%);
+  --primary: hsl(265, 90%, 68%);
+  --primary-foreground: hsl(0, 0%, 100%);
   --secondary: hsl(220, 16%, 12%);
   --secondary-foreground: hsl(220, 15%, 75%);
   --muted: hsl(220, 16%, 12%);
   --muted-foreground: hsl(220, 12%, 55%);
-  --accent: hsl(273, 85%, 82%);
-  --accent-foreground: hsl(220, 20%, 6%);
+  --accent: hsl(265, 90%, 68%);
+  --accent-foreground: hsl(0, 0%, 100%);
   --destructive: hsl(0, 80%, 60%);
   --destructive-foreground: hsl(220, 15%, 95%);
   --border: hsl(220, 15%, 14%);
   --input: hsl(220, 15%, 14%);
-  --ring: hsl(273, 85%, 82%);
-  --chart-1: hsl(273, 85%, 82%);
+  --ring: hsl(265, 90%, 68%);
+  --chart-1: hsl(265, 90%, 68%);
   --chart-2: hsl(220, 15%, 95%);
   --chart-3: hsl(220, 12%, 55%);
   --chart-4: hsl(220, 16%, 12%);
@@ -35,8 +35,8 @@
   --font-mono: 'Menlo', monospace;
 
   /* Glow variables */
-  --glow-amber: rgba(213, 170, 248, 0.12);
-  --glow-amber-strong: rgba(213, 170, 248, 0.2);
+  --glow-amber: rgba(139, 92, 246, 0.15);
+  --glow-amber-strong: rgba(139, 92, 246, 0.25);
 }
 
 @layer base {
@@ -95,7 +95,7 @@
   }
 
   .text-glow-amber {
-    text-shadow: 0 0 40px rgba(213, 170, 248, 0.4);
+    text-shadow: 0 0 40px rgba(139, 92, 246, 0.5);
   }
 
   /* Glass card effect */
