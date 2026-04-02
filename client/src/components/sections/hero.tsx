@@ -2,6 +2,7 @@ import Container from '@/components/ui/container';
 import Typewriter from '@/components/ui/typewriter';
 
 const clientLogos = [
+  { name: 'Fix My Curls', src: '/client-fixmycurls.png' },
   { name: 'Goat Life', src: '/client-goatlife.png' },
 ];
 
@@ -63,8 +64,7 @@ export default function Hero() {
                     <img
                       src={logo.src}
                       alt={logo.name}
-                      className="h-8 md:h-10 w-auto max-w-[120px] object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
-                      style={{ filter: 'brightness(0) invert(1)' }}
+                      className="h-8 md:h-10 w-auto max-w-[140px] object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
                     />
                   </div>
                 ))}
