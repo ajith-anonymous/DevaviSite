@@ -28,14 +28,9 @@ export default function Hero() {
             </span>
           </div>
 
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-foreground mb-6 md:mb-8">
-            Performance Marketing Built to Scale Your Brand.
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-foreground mb-10 md:mb-14">
+            Performance Marketing<br />Built to Scale Your Brand.
           </h1>
-
-          <p className="text-base md:text-xl text-muted-foreground mb-10 md:mb-14 max-w-xl leading-relaxed">
-            Co-founder-led execution, ruthless clarity, results you can actually ship.
-            We work with no more than 20 clients to ensure deep involvement and attention to detail.
-          </p>
 
           {/* Trusted by */}
           <div className="mb-0">
