@@ -12,7 +12,7 @@ const clientLogos = [
 
 export default function Hero() {
   return (
-    <section className="relative pt-16 pb-32 md:pt-24 md:pb-48 overflow-hidden">
+    <section className="relative pt-12 pb-28 md:pt-18 md:pb-40 overflow-hidden">
       {/* Background grid */}
       <div className="absolute inset-0 bg-grid-pattern opacity-100 -z-10" />
 
@@ -24,7 +24,7 @@ export default function Hero() {
       </div>
 
       <Container className="relative z-10">
-        <div className="text-left max-w-5xl mt-4 md:mt-8">
+        <div className="text-left max-w-5xl mt-2 md:mt-4">
           {/* Label */}
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-3 py-1.5 mb-5 md:mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
