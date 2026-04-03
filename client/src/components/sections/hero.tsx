@@ -12,7 +12,7 @@ const clientLogos = [
 
 export default function Hero() {
   return (
-    <section className="relative pt-12 pb-28 md:pt-24 md:pb-40 overflow-hidden">
+    <section className="relative pt-16 pb-32 md:pt-24 md:pb-40 overflow-hidden">
       {/* Background grid */}
       <div className="absolute inset-0 bg-grid-pattern opacity-100 -z-10" />
 
@@ -24,16 +24,16 @@ export default function Hero() {
       </div>
 
       <Container className="relative z-10">
-        <div className="text-left max-w-5xl mt-4 md:mt-8">
+        <div className="text-left max-w-5xl mt-6 md:mt-10">
           {/* Label */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-3 py-1.5 mb-3 md:mb-4">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-3 py-1.5 mb-5 md:mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
             <span className="text-xs font-medium text-muted-foreground uppercase tracking-widest">
               Performance Marketing Agency
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-foreground mb-4 md:mb-4">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-foreground mb-6 md:mb-8">
             Performance Marketing<br />Built to{' '}
             <span
               className="relative inline-block"
@@ -50,7 +50,7 @@ export default function Hero() {
           </h1>
 
           {/* Trusted by */}
-          <div className="mb-0 mt-2 md:mt-3">
+          <div className="mb-0 mt-4 md:mt-6">
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-[0.35em] mb-6">
               Brands we've helped scale
             </p>
