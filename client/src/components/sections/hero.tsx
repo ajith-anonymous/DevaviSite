@@ -33,7 +33,7 @@ export default function Hero() {
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-foreground mb-4 md:mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-foreground mb-4 md:mb-4">
             Performance Marketing<br />Built to{' '}
             <span
               className="relative inline-block"
@@ -50,7 +50,7 @@ export default function Hero() {
           </h1>
 
           {/* Trusted by */}
-          <div className="mb-0">
+          <div className="mb-0 mt-2 md:mt-3">
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-[0.35em] mb-6">
               Brands we've helped scale
             </p>
