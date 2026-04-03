@@ -52,7 +52,7 @@ export default function Hero() {
           {/* Trusted by */}
           <div className="mb-0">
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-6">
-              Trusted by teams who value clarity
+              Brands we've helped scale
             </p>
             <div className="overflow-hidden whitespace-nowrap relative">
               {/* Fade edges */}
