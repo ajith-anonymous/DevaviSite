@@ -40,7 +40,7 @@ function ServicesSection() {
             <p className="text-sm text-muted-foreground mb-5">Search, Shopping & Display</p>
             <ul className="space-y-2">
               {googleItems.map((item) => (
-                <li key={item} className="flex items-center gap-2 text-sm text-foreground">
+                <li key={item} className="flex items-center gap-2 text-foreground text-[20px] text-center">
                   <span className="w-1.5 h-1.5 rounded-full bg-foreground/40 flex-shrink-0" />
                   {item}
                 </li>
