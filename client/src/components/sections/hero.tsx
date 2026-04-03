@@ -26,14 +26,14 @@ export default function Hero() {
       <Container className="relative z-10">
         <div className="text-left max-w-5xl mt-4 md:mt-8">
           {/* Label */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-3 py-1.5 mb-5 md:mb-6">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-3 py-1.5 mb-3 md:mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
             <span className="text-xs font-medium text-muted-foreground uppercase tracking-widest">
               Performance Marketing Agency
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-foreground mb-6 md:mb-8">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-foreground mb-4 md:mb-6">
             Performance Marketing<br />Built to{' '}
             <span
               className="relative inline-block"
