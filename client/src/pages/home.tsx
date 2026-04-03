@@ -27,9 +27,9 @@ const metaItems = [
 
 function ServicesSection() {
   return (
-    <section id="services" className="py-16 md:py-24 bg-background">
+    <section id="services" className="pt-24 md:pt-28 pb-16 md:pb-24 bg-background">
       <Container>
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">Our Services</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3 text-center">Our Services</h2>
         <p className="text-muted-foreground text-base md:text-lg mb-10">
           Google and Meta, managed end-to-end. No handoffs, no gaps, no guesswork.
         </p>
