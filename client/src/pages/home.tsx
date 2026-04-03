@@ -49,7 +49,7 @@ function ServicesSection() {
           </div>
           {/* Meta Ads */}
           <div className="rounded-xl border border-accent/40 bg-secondary/30 p-7 backdrop-blur-sm">
-            <p className="text-xs font-bold text-accent uppercase tracking-widest mb-1">Meta Ads</p>
+            <p className="font-bold text-accent uppercase tracking-widest mb-1 text-[36px]">Meta Ads</p>
             <p className="text-sm text-muted-foreground mb-5">Feed, Reels & Retargeting</p>
             <ul className="space-y-2">
               {metaItems.map((item) => (
