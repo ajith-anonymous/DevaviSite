@@ -15,14 +15,12 @@ export default function Hero() {
     <section className="relative pt-16 pb-32 md:pt-24 md:pb-40 overflow-hidden">
       {/* Background grid */}
       <div className="absolute inset-0 bg-grid-pattern opacity-100 -z-10" />
-
       {/* Ambient glow blobs */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-accent/5 blur-[120px] animate-pulse-slow" />
         <div className="absolute top-20 right-0 w-[400px] h-[400px] rounded-full bg-accent/4 blur-[100px] animate-float" style={{ animationDelay: '2s' }} />
         <div className="absolute bottom-0 left-1/3 w-[350px] h-[350px] rounded-full bg-accent/3 blur-[80px]" />
       </div>
-
       <Container className="relative z-10">
         <div className="text-left max-w-5xl mt-6 md:mt-10">
           {/* Label */}
@@ -50,7 +48,7 @@ export default function Hero() {
           </h1>
 
           {/* Trusted by */}
-          <div className="mb-0 mt-16 md:mt-20">
+          <div className="mb-0 mt-16 md:mt-20 pt-[50px] pb-[50px]">
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-[0.35em] mb-6">
               Brands we've helped scale
             </p>
