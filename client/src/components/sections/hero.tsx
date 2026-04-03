@@ -12,7 +12,7 @@ const clientLogos = [
 
 export default function Hero() {
   return (
-    <section className="relative pt-16 pb-32 md:pt-24 md:pb-40 overflow-hidden">
+    <section className="relative pt-16 md:pt-24 md:pb-40 overflow-hidden pb-[0px]">
       {/* Background grid */}
       <div className="absolute inset-0 bg-grid-pattern opacity-100 -z-10" />
       {/* Ambient glow blobs */}
