@@ -36,7 +36,7 @@ function ServicesSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Google Ads */}
           <div className="rounded-xl border border-accent/40 bg-secondary/30 p-7 backdrop-blur-sm">
-            <p className="text-xs font-bold text-accent uppercase tracking-widest mb-1">Google Ads</p>
+            <p className="font-bold text-accent uppercase tracking-widest mb-1 text-[36px]">Google Ads</p>
             <p className="text-sm text-muted-foreground mb-5">Search, Shopping & Display</p>
             <ul className="space-y-2">
               {googleItems.map((item) => (
