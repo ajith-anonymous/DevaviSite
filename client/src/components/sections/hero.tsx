@@ -50,7 +50,7 @@ export default function Hero() {
           </h1>
 
           {/* Trusted by */}
-          <div className="mb-0 mt-12 md:mt-16">
+          <div className="mb-0 mt-16 md:mt-20">
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-[0.35em] mb-6">
               Brands we've helped scale
             </p>
