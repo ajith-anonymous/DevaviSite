@@ -3,7 +3,6 @@ export function TestimonialCard() {
     <div
       style={{ fontFamily: "'Barlow', system-ui, sans-serif" }}
       className="min-h-screen flex items-center justify-center p-6"
-      css-bg="true"
     >
       <style>{`
         body, html { background: hsl(220, 20%, 6%); }
@@ -120,7 +119,7 @@ export function TestimonialCard() {
             }}
           >
             <img
-              src="/__mockup/images/goatlife-photo.png"
+              src={`${import.meta.env.BASE_URL}images/goatlife-photo.png`}
               alt="Yash Kalra with Swastik and Anushka from Devavi Media"
               style={{
                 height: "210px",

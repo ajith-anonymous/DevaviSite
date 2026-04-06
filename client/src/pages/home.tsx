@@ -40,7 +40,7 @@ const metaItems = [
 
 function ServicesSection() {
   return (
-    <section id="services" className="md:pt-16 pb-16 md:pb-24 bg-background pt-[0px]">
+    <section id="services" className="md:pt-16 pb-16 md:pb-24 bg-background pt-[10px]">
       <Container>
         {/* Testimonials carousel */}
         <div className="mb-8 md:mb-10 rounded-2xl border border-border/70 bg-transparent p-5 md:p-7">
