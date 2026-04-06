@@ -74,11 +74,11 @@ function ServicesSection() {
                       </div>
                     </div>
                     {/* Photo */}
-                    <div className="overflow-hidden bg-secondary/40" style={{ height: '180px', flexShrink: 0 }}>
+                    <div className="overflow-hidden bg-secondary/40" style={{ height: '260px', flexShrink: 0 }}>
                       <img
                         src={t.photo}
                         alt={t.author}
-                        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'bottom center' }}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 60%' }}
                       />
                     </div>
                   </div>
