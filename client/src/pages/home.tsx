@@ -59,9 +59,40 @@ function ServicesSection() {
                   key={i}
                   className="flex-shrink-0 w-72 md:w-80 mr-4 rounded-xl border border-border/70 p-4 md:p-5"
                 >
-                  <p className="text-sm text-muted-foreground leading-relaxed pt-[100px] pb-[100px]">"{t.quote}"</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">"{t.quote}"</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Featured testimonial card */}
+        <div className="mb-8 md:mb-10 rounded-2xl overflow-hidden border border-border/70" style={{ boxShadow: '0 0 60px rgba(139, 92, 246, 0.06), 0 24px 48px rgba(0,0,0,0.3)' }}>
+          {/* Violet accent bar */}
+          <div style={{ height: '3px', background: 'linear-gradient(90deg, hsl(265, 90%, 68%), transparent)' }} />
+          {/* Photo */}
+          <div className="bg-secondary/40 overflow-hidden" style={{ height: '260px' }}>
+            <img
+              src="/goatlife-photo.png"
+              alt="Yash Kalra with Swastik and Anushka from Devavi Media"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'bottom center' }}
+            />
+          </div>
+          {/* Content */}
+          <div className="bg-card/60 p-6 md:p-7 flex flex-col gap-4">
+            <div className="text-accent font-black leading-none opacity-50" style={{ fontSize: '52px', letterSpacing: '-2px' }}>&ldquo;</div>
+            <p className="text-foreground text-sm md:text-base leading-relaxed -mt-2">
+              I genuinely think getting Swastik and Anushka onboard was one of the earliest and best decisions we made at Goat Life. The reason it worked from day one is because we were aligned in how we think — execution first, everything else later.
+              <br /><br />
+              Truly grateful to have you guys on the same boat.
+            </p>
+            <div className="border-t border-border/50" />
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-foreground font-bold text-sm">Yash Kalra</p>
+                <p className="text-muted-foreground font-bold text-xs uppercase tracking-widest mt-0.5">Founder — Goat Life</p>
+              </div>
+              <div className="w-2 h-2 rounded-full bg-accent opacity-70" />
             </div>
           </div>
         </div>
