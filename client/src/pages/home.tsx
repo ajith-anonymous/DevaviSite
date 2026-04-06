@@ -53,11 +53,11 @@ function ServicesSection() {
           <div className="overflow-hidden relative">
             <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-background/80 to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-background/80 to-transparent z-10 pointer-events-none" />
-            <div className="flex gap-4 animate-scroll">
+            <div className="flex animate-scroll">
               {[...testimonials, ...testimonials].map((t, i) => (
                 <div
                   key={i}
-                  className="flex-shrink-0 w-72 md:w-80 rounded-xl border border-border/70 p-4 md:p-5"
+                  className="flex-shrink-0 w-72 md:w-80 mr-4 rounded-xl border border-border/70 p-4 md:p-5"
                 >
                   <p className="text-sm text-muted-foreground leading-relaxed">"{t.quote}"</p>
                 </div>
