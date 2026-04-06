@@ -67,7 +67,7 @@ function ServicesSection() {
                     <div style={{ height: '2px', background: 'linear-gradient(90deg, hsl(265, 90%, 68%), transparent)', flexShrink: 0 }} />
                     {/* Text */}
                     <div className="p-4 flex flex-col gap-3 flex-1">
-                      <p className="text-xs text-muted-foreground leading-relaxed">"{t.quote}"</p>
+                      <p className="text-xs text-muted-foreground leading-relaxed">{t.quote}</p>
                       <div className="border-t border-border/40 pt-2 mt-auto">
                         <p className="text-xs font-bold text-foreground">{t.author}</p>
                         <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mt-0.5">{t.role}</p>
