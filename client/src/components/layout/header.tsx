@@ -16,7 +16,7 @@ export default function Header() {
             {/* Wordmark */}
             <Link href="/" className="hover:opacity-80 transition-opacity min-h-[44px] flex items-center">
               <span
-                className="text-foreground uppercase tracking-widest md:text-lg font-bold text-[20px]"
+                className="text-foreground uppercase tracking-widest md:text-lg font-bold text-[22px]"
                 style={{ fontFamily: "'Open Sans Condensed', sans-serif" }}
               >
                 Devavi Media
