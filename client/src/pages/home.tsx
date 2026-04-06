@@ -6,7 +6,9 @@ import { Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: "I genuinely think getting Swastik and Anushka onboard was one of the earliest and best decisions we made at Goat Life. The reason it worked from day one is because we were aligned in how we think — execution first, everything else later. Truly grateful to have you guys on the same boat. — Yash Kalra, Founder - Goat Life",
+    quote: "I genuinely think getting Swastik and Anushka onboard was one of the earliest and best decisions we made at Goat Life. The reason it worked from day one is because we were aligned in how we think — execution first, everything else later. Truly grateful to have you guys on the same boat.",
+    author: "Yash Kalra",
+    role: "Founder - Goat Life",
   },
   {
     quote: "Performance has been great. We've been able to scale with Flighted in a way that we haven't before.",
@@ -54,9 +56,15 @@ function ServicesSection() {
               {[...testimonials, ...testimonials].map((t, i) => (
                 <div
                   key={i}
-                  className="flex-shrink-0 w-72 md:w-80 mr-4 rounded-xl border border-border/70 p-4 md:p-5"
+                  className="flex-shrink-0 w-72 md:w-80 mr-4 rounded-xl border border-border/70 p-4 md:p-5 flex flex-col gap-3"
                 >
-                  <p className="text-sm text-muted-foreground leading-relaxed">"{t.quote}"</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">"{t.quote}"</p>
+                  {t.author && (
+                    <div className="border-t border-border/40 pt-2">
+                      <p className="text-xs font-bold text-foreground">{t.author}</p>
+                      <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mt-0.5">{t.role}</p>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
