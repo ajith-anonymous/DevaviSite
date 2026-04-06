@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import Header from '@/components/layout/header';
+import Footer from '@/components/layout/footer';
 import Hero from '@/components/sections/hero';
 import Container from '@/components/ui/container';
 import { Quote, Workflow } from 'lucide-react';
@@ -195,6 +196,7 @@ export default function Home() {
         <Hero />
         <ServicesSection />
       </main>
+      <Footer />
     </>
   );
 }
