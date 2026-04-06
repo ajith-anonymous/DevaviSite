@@ -21,7 +21,7 @@ const testimonials = [
   {
     quote: "The team at Devavi Media is highly competent and agile. The servicing team, in particular, did an excellent job of delivering solutions to our business challenges and helping us extract maximum value from our digital campaigns. I would definitely recommend Devavi Media to brands looking to grow.",
     author: "Durba Mandal",
-    role: "Bioveda",
+    role: "Head Of Marketing - Bioveda",
   },
 ];
 
