@@ -6,7 +6,7 @@ import { Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: "In my experience, Flighted does a great job achieving product-market fit and getting ads to scale.",
+    quote: "I genuinely think getting Swastik and Anushka onboard was one of the earliest and best decisions we made at Goat Life. The reason it worked from day one is because we were aligned in how we think — execution first, everything else later. Truly grateful to have you guys on the same boat. — Yash Kalra, Founder - Goat Life",
   },
   {
     quote: "Performance has been great. We've been able to scale with Flighted in a way that we haven't before.",
