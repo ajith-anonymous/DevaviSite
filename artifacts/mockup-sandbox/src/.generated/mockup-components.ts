@@ -4,5 +4,6 @@ export const modules: ModuleMap = {
   "./components/mockups/homepage/BoldEditorial.tsx": () => import("../components/mockups/homepage/BoldEditorial.tsx"),
   "./components/mockups/homepage/ConfidentMinimal.tsx": () => import("../components/mockups/homepage/ConfidentMinimal.tsx"),
   "./components/mockups/homepage/NarrativeScroll.tsx": () => import("../components/mockups/homepage/NarrativeScroll.tsx"),
-  "./components/mockups/homepage/ResultsDashboard.tsx": () => import("../components/mockups/homepage/ResultsDashboard.tsx")
+  "./components/mockups/homepage/ResultsDashboard.tsx": () => import("../components/mockups/homepage/ResultsDashboard.tsx"),
+  "./components/mockups/testimonial-card/TestimonialCard.tsx": () => import("../components/mockups/testimonial-card/TestimonialCard.tsx")
 };
