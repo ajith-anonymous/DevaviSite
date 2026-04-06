@@ -6,6 +6,12 @@ import { Quote } from 'lucide-react';
 
 const testimonials = [
   {
+    quote: "I genuinely think getting Swastik and Anushka onboard was one of the earliest and best decisions we made at Goat Life. The reason it worked from day one is because we were aligned in how we think — execution first, everything else later. Truly grateful to have you guys on the same boat.",
+    author: "Yash Kalra",
+    role: "Founder — Goat Life",
+    photo: "/goatlife-photo.png",
+  },
+  {
     quote: "Flighted improved our website conversion rate by 39%, while also growing top-line revenue by 69% in 30 days.",
   },
   {
@@ -53,46 +59,41 @@ function ServicesSection() {
           <div className="overflow-hidden relative">
             <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-background/80 to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-background/80 to-transparent z-10 pointer-events-none" />
-            <div className="flex animate-scroll">
-              {[...testimonials, ...testimonials].map((t, i) => (
-                <div
-                  key={i}
-                  className="flex-shrink-0 w-72 md:w-80 mr-4 rounded-xl border border-border/70 p-4 md:p-5"
-                >
-                  <p className="text-sm text-muted-foreground leading-relaxed">"{t.quote}"</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Featured testimonial card */}
-        <div className="mb-8 md:mb-10 rounded-2xl overflow-hidden border border-border/70" style={{ boxShadow: '0 0 60px rgba(139, 92, 246, 0.06), 0 24px 48px rgba(0,0,0,0.3)' }}>
-          {/* Violet accent bar */}
-          <div style={{ height: '3px', background: 'linear-gradient(90deg, hsl(265, 90%, 68%), transparent)' }} />
-          {/* Photo */}
-          <div className="bg-secondary/40 overflow-hidden" style={{ height: '260px' }}>
-            <img
-              src="/goatlife-photo.png"
-              alt="Yash Kalra with Swastik and Anushka from Devavi Media"
-              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'bottom center' }}
-            />
-          </div>
-          {/* Content */}
-          <div className="bg-card/60 p-6 md:p-7 flex flex-col gap-4">
-            <div className="text-accent font-black leading-none opacity-50" style={{ fontSize: '52px', letterSpacing: '-2px' }}>&ldquo;</div>
-            <p className="text-foreground text-sm md:text-base leading-relaxed -mt-2">
-              I genuinely think getting Swastik and Anushka onboard was one of the earliest and best decisions we made at Goat Life. The reason it worked from day one is because we were aligned in how we think — execution first, everything else later.
-              <br /><br />
-              Truly grateful to have you guys on the same boat.
-            </p>
-            <div className="border-t border-border/50" />
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-foreground font-bold text-sm">Yash Kalra</p>
-                <p className="text-muted-foreground font-bold text-xs uppercase tracking-widest mt-0.5">Founder — Goat Life</p>
-              </div>
-              <div className="w-2 h-2 rounded-full bg-accent opacity-70" />
+            <div className="flex animate-scroll items-start">
+              {[...testimonials, ...testimonials].map((t, i) =>
+                t.photo ? (
+                  <div
+                    key={i}
+                    className="flex-shrink-0 w-72 md:w-80 mr-4 rounded-xl border border-border/70 overflow-hidden flex flex-col"
+                  >
+                    {/* Violet top bar */}
+                    <div style={{ height: '2px', background: 'linear-gradient(90deg, hsl(265, 90%, 68%), transparent)', flexShrink: 0 }} />
+                    {/* Photo */}
+                    <div className="overflow-hidden bg-secondary/40" style={{ height: '180px', flexShrink: 0 }}>
+                      <img
+                        src={t.photo}
+                        alt={t.author}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'bottom center' }}
+                      />
+                    </div>
+                    {/* Text */}
+                    <div className="p-4 flex flex-col gap-3 flex-1">
+                      <p className="text-xs text-muted-foreground leading-relaxed">"{t.quote}"</p>
+                      <div className="border-t border-border/40 pt-2 mt-auto">
+                        <p className="text-xs font-bold text-foreground">{t.author}</p>
+                        <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mt-0.5">{t.role}</p>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div
+                    key={i}
+                    className="flex-shrink-0 w-72 md:w-80 mr-4 rounded-xl border border-border/70 p-4 md:p-5"
+                  >
+                    <p className="text-sm text-muted-foreground leading-relaxed">"{t.quote}"</p>
+                  </div>
+                )
+              )}
             </div>
           </div>
         </div>
