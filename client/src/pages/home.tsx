@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Header from '@/components/layout/header';
 import Hero from '@/components/sections/hero';
 import Container from '@/components/ui/container';
-import { Quote } from 'lucide-react';
+import { Quote, Workflow } from 'lucide-react';
 
 const testimonials = [
   {
@@ -94,6 +94,51 @@ function ServicesSection() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+
+        {/* Our Process */}
+        <div className="mb-8 md:mb-10 rounded-2xl border border-border/70 bg-transparent p-5 md:p-7">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center flex-shrink-0">
+              <Workflow className="w-4 h-4 text-muted-foreground" />
+            </div>
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">Our Process</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              {
+                step: '01',
+                title: '30-Minute Discovery Call',
+                body: "We'll review your current performance, growth goals, and operational readiness in a focused conversation to assess strategic alignment.",
+              },
+              {
+                step: '02',
+                title: 'Comprehensive Audit',
+                body: "If there is mutual interest, we carry out a detailed analysis of your current performance across ad accounts, analytics infrastructure, creatives, and conversion flows. This is followed by clear, initial recommendations on priority areas to address.",
+              },
+              {
+                step: '03',
+                title: 'Partnership Decision',
+                body: "You evaluate whether the strategy aligns with your goals. We assess whether we have the capacity and resources to deliver meaningful outcomes. We move forward only when both sides are fully confident in the partnership.",
+              },
+              {
+                step: '04',
+                title: 'Onboarding & Execution',
+                body: "Once engaged, onboarding is completed within two weeks. Month 1 focuses on establishing the right infrastructure and initial optimisations. Months 2–3 are typically centred around measurable performance improvements. From Month 4 onward, the focus shifts to accelerated scaling.",
+              },
+            ].map(({ step, title, body }) => (
+              <div key={step} className="rounded-xl border border-border/70 p-5 flex flex-col gap-3">
+                <span
+                  className="text-xs font-bold tracking-[0.2em] uppercase"
+                  style={{ color: 'hsl(265,90%,68%)' }}
+                >
+                  Step {step}
+                </span>
+                <p className="text-sm font-bold text-foreground leading-snug">{title}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
+              </div>
+            ))}
           </div>
         </div>
 
