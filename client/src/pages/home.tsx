@@ -27,7 +27,7 @@ const metaItems = [
 
 function ServicesSection() {
   return (
-    <section id="services" className="md:pt-16 pb-16 md:pb-24 bg-background pt-[30px]">
+    <section id="services" className="md:pt-16 pb-16 md:pb-24 bg-background pt-[0px]">
       <Container>
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3 text-center">Our Services</h2>
         <p className="text-muted-foreground text-base md:text-lg mb-10">
