@@ -52,13 +52,13 @@ export default function Hero() {
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-[0.35em] mb-6">
               Brands we've helped scale
             </p>
-            <div className="overflow-hidden whitespace-nowrap relative">
+            <div className="overflow-hidden whitespace-nowrap relative group">
               {/* Fade edges */}
               <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
               <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-              <div className="flex items-center animate-scroll">
+              <div className="flex items-center animate-scroll group-hover:[animation-play-state:paused]" style={{ willChange: 'transform', width: 'max-content', animationDuration: '14s' }}>
                 {[...clientLogos, ...clientLogos].map((logo, i) => (
-                  <div key={i} className="flex items-center justify-center flex-shrink-0 mx-8 md:mx-12">
+                  <div key={i} className="flex items-center justify-center flex-shrink-0 mx-5 md:mx-7">
                     <img
                       src={logo.src}
                       alt={logo.name}
