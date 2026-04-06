@@ -130,8 +130,8 @@ function ServicesSection() {
             ].map(({ step, title, body }) => (
               <div key={step} className="rounded-xl border border-border/70 p-5 flex flex-col gap-3">
                 <span
-                  className="text-xs font-bold tracking-[0.2em] uppercase"
-                  style={{ color: 'hsl(265,90%,68%)' }}
+                  className="self-start text-[10px] font-bold tracking-[0.2em] uppercase px-2.5 py-1 rounded-full border"
+                  style={{ color: 'hsl(265,90%,68%)', borderColor: 'hsl(265,90%,68% / 0.35)', backgroundColor: 'hsl(265,90%,68% / 0.08)' }}
                 >
                   Step {step}
                 </span>
