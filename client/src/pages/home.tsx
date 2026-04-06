@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import Header from '@/components/layout/header';
 import Hero from '@/components/sections/hero';
 import Container from '@/components/ui/container';
+import { Quote } from 'lucide-react';
 
 const googleItems = [
   'Search Campaigns',
