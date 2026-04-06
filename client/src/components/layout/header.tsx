@@ -23,7 +23,7 @@ export default function Header() {
                 style={{ mixBlendMode: 'screen' }}
               />
               <span
-                className="text-foreground uppercase tracking-widest md:text-lg font-extrabold text-[22px]"
+                className="hidden md:inline text-foreground uppercase tracking-widest md:text-lg font-extrabold text-[22px]"
                 style={{ fontFamily: "'Open Sans Condensed', sans-serif" }}
               >
                 Devavi Media
