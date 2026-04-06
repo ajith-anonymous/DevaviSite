@@ -28,6 +28,11 @@ const testimonials = [
     author: "Aishwarya Jhawar",
     role: "Founder - Ekatra",
   },
+  {
+    quote: "We partnered with Devavi to scale our sales through paid media, and their expertise has been evident from day one. They understand the brand and its nuances extremely well. We've seen a clear uptick in sales and are glad to have them as partners early in our journey.",
+    author: "Chhaya Dabas",
+    role: "Founder - Suvaa",
+  },
 ];
 
 const googleItems = [
