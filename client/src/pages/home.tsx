@@ -65,14 +65,6 @@ function ServicesSection() {
                   >
                     {/* Violet top bar */}
                     <div style={{ height: '2px', background: 'linear-gradient(90deg, hsl(265, 90%, 68%), transparent)', flexShrink: 0 }} />
-                    {/* Photo */}
-                    <div className="overflow-hidden bg-secondary/40" style={{ height: '180px', flexShrink: 0 }}>
-                      <img
-                        src={t.photo}
-                        alt={t.author}
-                        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'bottom center' }}
-                      />
-                    </div>
                     {/* Text */}
                     <div className="p-4 flex flex-col gap-3 flex-1">
                       <p className="text-xs text-muted-foreground leading-relaxed">"{t.quote}"</p>
@@ -80,6 +72,14 @@ function ServicesSection() {
                         <p className="text-xs font-bold text-foreground">{t.author}</p>
                         <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mt-0.5">{t.role}</p>
                       </div>
+                    </div>
+                    {/* Photo */}
+                    <div className="overflow-hidden bg-secondary/40" style={{ height: '180px', flexShrink: 0 }}>
+                      <img
+                        src={t.photo}
+                        alt={t.author}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'bottom center' }}
+                      />
                     </div>
                   </div>
                 ) : (
