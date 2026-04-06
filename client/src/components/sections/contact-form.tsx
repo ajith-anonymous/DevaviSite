@@ -7,12 +7,17 @@ import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import Container from '@/components/ui/container';
 import { Card, CardContent } from '@/components/ui/card';
 import { contactFormSchema, type ContactForm } from '@shared/schema';
 import { apiRequest } from '@/lib/queryClient';
 import { useToast } from '@/hooks/use-toast';
+
+const SERVICE_OPTIONS = [
+  'Performance Marketing — Google',
+  'Performance Marketing — Meta',
+  'Performance Marketing — Google & Meta',
+] as const;
 
 const benefits = [
   {
@@ -32,14 +37,6 @@ const benefits = [
   },
 ];
 
-const adSpendOptions = [
-  { value: 'under_50k', label: 'Under ₹50k' },
-  { value: '50k_2l', label: '₹50k - ₹2L' },
-  { value: '2l_5l', label: '₹2L - ₹5L' },
-  { value: '5l_10l', label: '₹5L - ₹10L' },
-  { value: 'above_10l', label: 'Above ₹10L' },
-];
-
 export default function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
@@ -50,11 +47,13 @@ export default function ContactForm() {
     defaultValues: {
       name: '',
       email: '',
+      phone: '',
       company: '',
-      adSpend: '',
       message: '',
     },
   });
+
+  const selectedService = form.watch('service');
 
   const contactMutation = useMutation({
     mutationFn: async (data: ContactForm) => {
@@ -68,7 +67,6 @@ export default function ContactForm() {
       });
       form.reset();
       setIsSubmitted(true);
-      // Invalidate and refetch any contact-related queries
       queryClient.invalidateQueries({ queryKey: ['/api/contacts'] });
     },
     onError: (error) => {
@@ -96,7 +94,7 @@ export default function ContactForm() {
             <p className="text-xl text-slate-300 mb-8">
               We work with no more than 20 clients at a time. If you're looking for an agency that prioritizes results over rhetoric, let's talk.
             </p>
-            
+
             <div className="space-y-6">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-center space-x-4">
@@ -162,6 +160,20 @@ export default function ContactForm() {
 
                     <FormField
                       control={form.control}
+                      name="phone"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Phone Number *</FormLabel>
+                          <FormControl>
+                            <Input type="tel" placeholder="+91 98765 43210" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
                       name="company"
                       render={({ field }) => (
                         <FormItem>
@@ -176,24 +188,26 @@ export default function ContactForm() {
 
                     <FormField
                       control={form.control}
-                      name="adSpend"
-                      render={({ field }) => (
+                      name="service"
+                      render={() => (
                         <FormItem>
-                          <FormLabel>Monthly Ad Spend *</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <FormControl>
-                              <SelectTrigger>
-                                <SelectValue placeholder="Select range" />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              {adSpendOptions.map((option) => (
-                                <SelectItem key={option.value} value={option.value}>
-                                  {option.label}
-                                </SelectItem>
-                              ))}
-                            </SelectContent>
-                          </Select>
+                          <FormLabel>Services of Interest *</FormLabel>
+                          <div className="flex flex-col gap-2">
+                            {SERVICE_OPTIONS.map((option) => (
+                              <button
+                                key={option}
+                                type="button"
+                                onClick={() => form.setValue('service', option, { shouldValidate: true })}
+                                className={`text-left px-3 py-2.5 rounded-lg border text-sm transition-all duration-150 ${
+                                  selectedService === option
+                                    ? 'border-primary/70 bg-primary/10 text-foreground font-medium ring-1 ring-primary/50'
+                                    : 'border-border text-muted-foreground hover:border-border hover:text-foreground'
+                                }`}
+                              >
+                                {option}
+                              </button>
+                            ))}
+                          </div>
                           <FormMessage />
                         </FormItem>
                       )}
@@ -204,9 +218,9 @@ export default function ContactForm() {
                       name="message"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Message</FormLabel>
+                          <FormLabel>Message *</FormLabel>
                           <FormControl>
-                            <Textarea 
+                            <Textarea
                               placeholder="Tell us about your business and marketing goals..."
                               className="resize-none"
                               {...field}
@@ -217,8 +231,8 @@ export default function ContactForm() {
                       )}
                     />
 
-                    <Button 
-                      type="submit" 
+                    <Button
+                      type="submit"
                       className="w-full"
                       size="lg"
                       disabled={contactMutation.isPending}
@@ -233,8 +247,8 @@ export default function ContactForm() {
                 <p className="text-sm text-muted-foreground mb-4">
                   Prefer to schedule directly?
                 </p>
-                <a 
-                  href="#" 
+                <a
+                  href="#"
                   className="text-primary hover:text-primary/80 font-medium transition-colors"
                 >
                   Book a 30-minute call →

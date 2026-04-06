@@ -62,7 +62,7 @@ function RequestCallbackForm() {
     formState: { errors },
   } = useForm<ContactForm>({
     resolver: zodResolver(contactFormSchema),
-    defaultValues: { name: '', email: '', phone: '', company: '', service: undefined as any, message: '' },
+    defaultValues: { name: '', email: '', phone: '', company: '', message: '' },
   });
 
   const selectedService = watch('service');
