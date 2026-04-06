@@ -142,23 +142,6 @@ function ServicesSection() {
           </div>
         </div>
 
-        {/* Services */}
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Meta Ads */}
-          <div className="rounded-xl border border-accent/40 bg-secondary/30 p-7 backdrop-blur-sm">
-            <p className="font-bold text-accent uppercase tracking-widest mb-1 text-[36px]">Meta Ads</p>
-            <p className="text-muted-foreground mb-5 text-[18px]">Feed, Reels & Retargeting</p>
-            <ul className="space-y-2 text-[20px]">
-              {metaItems.map((item) => (
-                <li key={item} className="flex items-center gap-2 text-foreground text-[18px]">
-                  <span className="w-1.5 h-1.5 rounded-full bg-foreground/40 flex-shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
       </Container>
     </section>
   );
