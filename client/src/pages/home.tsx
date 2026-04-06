@@ -12,9 +12,6 @@ const testimonials = [
     photo: "/goatlife-photo.png",
   },
   {
-    quote: "Flighted improved our website conversion rate by 39%, while also growing top-line revenue by 69% in 30 days.",
-  },
-  {
     quote: "In my experience, Flighted does a great job achieving product-market fit and getting ads to scale.",
   },
   {
