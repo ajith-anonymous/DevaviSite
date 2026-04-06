@@ -7,28 +7,12 @@ import { Quote } from 'lucide-react';
 const testimonials = [
   {
     quote: "Flighted improved our website conversion rate by 39%, while also growing top-line revenue by 69% in 30 days.",
-    author: "Alvaro De La Rocha",
-    role: "CMO, Halfday Travel",
   },
   {
-    quote: "In my experience, Flighted does a great job achieving product-market fit and getting ads to scale. They care about your business and success.",
-    author: "Dean Rotchin",
-    role: "Co-Founder, SimplyGoodCoffee",
+    quote: "In my experience, Flighted does a great job achieving product-market fit and getting ads to scale.",
   },
   {
-    quote: "Performance has been great. We've been able to scale in a way that we haven't before. I like the data-minded approach.",
-    author: "Wesley Lau",
-    role: "Founder, Flintts Mints",
-  },
-  {
-    quote: "Flighted has exceeded my expectations with both Google and Snapchat — they also have been a huge help with affiliate.",
-    author: "Casey Husband",
-    role: "Founder, Avantera Health",
-  },
-  {
-    quote: "An amazing, all encompassing service for us as a new CPG brand. They help with analytics, paid ad creative, and paid management.",
-    author: "Daniel Rainey",
-    role: "Founder, Stars & Honey",
+    quote: "Performance has been great. We've been able to scale with Flighted in a way that we haven't before.",
   },
 ];
 
@@ -73,13 +57,9 @@ function ServicesSection() {
               {[...testimonials, ...testimonials].map((t, i) => (
                 <div
                   key={i}
-                  className="flex-shrink-0 w-72 md:w-80 rounded-xl border border-border/70 p-4 md:p-5 flex flex-col gap-3"
+                  className="flex-shrink-0 w-72 md:w-80 rounded-xl border border-border/70 p-4 md:p-5"
                 >
                   <p className="text-sm text-muted-foreground leading-relaxed">"{t.quote}"</p>
-                  <div className="mt-auto pt-2 border-t border-border/40">
-                    <p className="text-xs font-semibold text-foreground">{t.author}</p>
-                    <p className="text-xs text-muted-foreground">{t.role}</p>
-                  </div>
                 </div>
               ))}
             </div>
