@@ -23,6 +23,11 @@ const testimonials = [
     author: "Durba Mandal",
     role: "Head Of Marketing - Bioveda",
   },
+  {
+    quote: "Working with Devavi has been one of the best decisions for Ekatra. We've seen a clear shift from stagnant ROAS to consistent, measurable growth. Beyond performance, what stands out is their energy and ownership. They don't just execute — they guide, challenge our thinking, and truly care about long-term brand building. It feels less like an agency and more like an extended growth team.",
+    author: "Aishwarya Jhawar",
+    role: "Founder - Ekatra",
+  },
 ];
 
 const googleItems = [
