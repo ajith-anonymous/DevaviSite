@@ -25,9 +25,8 @@ export default function Header() {
 
             {/* Nav */}
             <nav className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
-              <Link href="/services" className="hover:text-foreground transition-colors">Services</Link>
-              <Link href="/process" className="hover:text-foreground transition-colors">Process</Link>
-              <Link href="/work" className="hover:text-foreground transition-colors">Work</Link>
+              <a href="/#testimonials" className="hover:text-foreground transition-colors">Testimonials</a>
+              <a href="/#our-process" className="hover:text-foreground transition-colors">Our Process</a>
               <Link href="/contact" className="px-4 py-2 rounded-lg bg-accent text-accent-foreground font-semibold hover:bg-accent/90 transition-colors">Contact</Link>
             </nav>
 

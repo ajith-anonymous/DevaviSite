@@ -65,7 +65,7 @@ function ServicesSection() {
     <section id="services" className="md:pt-16 pb-16 md:pb-24 bg-background pt-[10px]">
       <Container>
         {/* Testimonials carousel */}
-        <div className="mb-8 md:mb-10 rounded-2xl border border-border/70 bg-transparent p-5 md:p-7">
+        <div id="testimonials" className="mb-8 md:mb-10 rounded-2xl border border-border/70 bg-transparent p-5 md:p-7">
           <div className="flex items-center gap-3 mb-5">
             <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center flex-shrink-0">
               <Quote className="w-4 h-4 text-muted-foreground" />
@@ -98,7 +98,7 @@ function ServicesSection() {
         </div>
 
         {/* Our Process */}
-        <div className="mb-8 md:mb-10 rounded-2xl border border-border/70 bg-transparent p-5 md:p-7">
+        <div id="our-process" className="mb-8 md:mb-10 rounded-2xl border border-border/70 bg-transparent p-5 md:p-7">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center flex-shrink-0">
               <Workflow className="w-4 h-4 text-muted-foreground" />
