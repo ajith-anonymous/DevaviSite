@@ -1,6 +1,7 @@
 import Container from '@/components/ui/container';
 import { SiLinkedin, SiInstagram } from 'react-icons/si';
 import { Mail } from 'lucide-react';
+import logoSrc from '@assets/Devavi_1775518074214.png';
 
 export default function Footer() {
   return (
@@ -9,12 +10,20 @@ export default function Footer() {
         <div className="py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
           {/* Brand */}
           <div className="text-center sm:text-left">
-            <p
-              className="text-foreground uppercase tracking-widest font-extrabold text-[18px] mb-1"
-              style={{ fontFamily: "'Open Sans Condensed', sans-serif" }}
-            >
-              Devavi Media
-            </p>
+            <div className="flex items-center gap-1 mb-1">
+              <img
+                src={logoSrc}
+                alt="Devavi logo"
+                className="h-7 w-auto"
+                style={{ mixBlendMode: 'screen' }}
+              />
+              <p
+                className="text-foreground uppercase tracking-widest font-extrabold text-[18px]"
+                style={{ fontFamily: "'Open Sans Condensed', sans-serif" }}
+              >
+                Devavi Media
+              </p>
+            </div>
             <a
               href="mailto:hello@devavimedia.com"
               className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors justify-center sm:justify-start"

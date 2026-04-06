@@ -1,5 +1,6 @@
 import { Link } from 'wouter';
 import Container from '@/components/ui/container';
+import logoSrc from '@assets/Devavi_1775518074214.png';
 
 export default function Header() {
   return (
@@ -14,7 +15,13 @@ export default function Header() {
         <Container>
           <div className="flex justify-between items-center h-14 md:h-16">
             {/* Wordmark */}
-            <Link href="/" className="hover:opacity-80 transition-opacity min-h-[44px] flex items-center">
+            <Link href="/" className="hover:opacity-80 transition-opacity min-h-[44px] flex items-center gap-1">
+              <img
+                src={logoSrc}
+                alt="Devavi logo"
+                className="h-8 w-auto"
+                style={{ mixBlendMode: 'screen' }}
+              />
               <span
                 className="text-foreground uppercase tracking-widest md:text-lg font-extrabold text-[22px]"
                 style={{ fontFamily: "'Open Sans Condensed', sans-serif" }}
