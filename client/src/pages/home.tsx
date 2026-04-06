@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import Header from '@/components/layout/header';
 import Hero from '@/components/sections/hero';
 import Container from '@/components/ui/container';
+import { Quote } from 'lucide-react';
 
 const googleItems = [
   'Search Campaigns',
@@ -29,6 +30,25 @@ function ServicesSection() {
   return (
     <section id="services" className="md:pt-16 pb-16 md:pb-24 bg-background pt-[0px]">
       <Container>
+        <div className="mb-8 md:mb-10 rounded-2xl border border-border/70 bg-transparent p-5 md:p-7">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center">
+              <Quote className="w-4 h-4 text-muted-foreground" />
+            </div>
+            <p className="text-sm md:text-base uppercase tracking-[0.35em] text-muted-foreground">Testimonials</p>
+          </div>
+          <div className="grid gap-3 md:grid-cols-3">
+            <div className="rounded-xl border border-border/70 p-4 md:p-5 text-sm text-muted-foreground">
+              “Flighted improved our website conversion rate by 39%, while also growing top-line revenue by 69% in 30 days.”
+            </div>
+            <div className="rounded-xl border border-border/70 p-4 md:p-5 text-sm text-muted-foreground">
+              “In my experience, Flighted does a great job achieving product-market fit and getting ads to scale.”
+            </div>
+            <div className="rounded-xl border border-border/70 p-4 md:p-5 text-sm text-muted-foreground">
+              “Performance has been great. We’ve been able to scale with Flighted in a way that we haven’t before.”
+            </div>
+          </div>
+        </div>
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3 text-center">Our Services</h2>
         <p className="text-muted-foreground text-base md:text-lg mb-10">
           Google and Meta, managed end-to-end. No handoffs, no gaps, no guesswork.
