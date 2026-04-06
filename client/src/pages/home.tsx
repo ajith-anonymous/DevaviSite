@@ -35,7 +35,7 @@ function ServicesSection() {
             <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center">
               <Quote className="w-4 h-4 text-muted-foreground" />
             </div>
-            <p className="text-sm md:text-base uppercase tracking-[0.35em] text-muted-foreground">Testimonials</p>
+            <p className="md:text-base uppercase tracking-[0.35em] text-muted-foreground text-[50px] font-bold">Testimonials</p>
           </div>
           <div className="grid gap-3 md:grid-cols-3">
             <div className="rounded-xl border border-border/70 p-4 md:p-5 text-sm text-muted-foreground">
