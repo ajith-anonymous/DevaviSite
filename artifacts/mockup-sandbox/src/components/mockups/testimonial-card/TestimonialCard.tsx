@@ -28,23 +28,22 @@ export function TestimonialCard() {
           }}
         />
 
-        {/* Photo — sits at top, bleeds edge-to-edge */}
+        {/* Photo — full-width, crops the empty transparent top */}
         <div
           style={{
-            height: "240px",
+            height: "260px",
             background: "hsl(220, 18%, 9%)",
-            display: "flex",
-            alignItems: "flex-end",
-            justifyContent: "center",
             overflow: "hidden",
+            position: "relative",
           }}
         >
           <img
             src={`${import.meta.env.BASE_URL}images/goatlife-photo-v2.png`}
             alt="Yash Kalra with Swastik and Anushka from Devavi Media"
             style={{
-              height: "220px",
-              objectFit: "contain",
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
               objectPosition: "bottom center",
             }}
           />
