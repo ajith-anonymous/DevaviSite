@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { contactFormSchema } from "@shared/schema";
 import { z } from "zod";
+import { sendLeadNotification } from "./email";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission
@@ -13,21 +14,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Store contact in database
       const contact = await storage.createContact(validatedData);
       
-      // TODO: Send email notification using Nodemailer
-      // For now, just log to console in development
-      if (process.env.NODE_ENV === "development") {
-        console.log("📧 New contact form submission:", {
-          name: contact.name,
-          email: contact.email,
-          phone: contact.phone,
-          company: contact.company,
-          service: contact.service,
-          message: contact.message,
-        });
-      }
-      
-      // TODO: In production, send actual email
-      // await sendContactNotification(contact);
+      // Send email notification (non-blocking — failure does not affect visitor response)
+      sendLeadNotification(contact).catch((err) => {
+        console.error("📧 Failed to send lead notification email:", err);
+      });
       
       res.json({ 
         success: true, 
