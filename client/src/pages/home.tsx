@@ -26,7 +26,8 @@ const testimonials = [
     role: "Founder - Ekatra",
   },
   {
-    quote: "We partnered with Devavi to scale our sales through paid media, and their expertise has been evident from day one. They understand the brand and its nuances extremely well. We've seen a clear uptick in sales and are glad to have them as partners early in our journey.\n\nSundar aur suvidha waali partnership hai yeh.",
+    quote: "We partnered with Devavi to scale our sales through paid media, and their expertise has been evident from day one. They understand the brand and its nuances extremely well. We've seen a clear uptick in sales and are glad to have them as partners early in our journey.",
+    quote2: "Sundar aur suvidha waali partnership hai yeh.",
     author: "Chhaya Dabas",
     role: "Founder - Suvaa",
   },
@@ -69,13 +70,16 @@ function ServicesSection() {
           <div className="overflow-hidden relative">
             <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-background/80 to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-background/80 to-transparent z-10 pointer-events-none" />
-            <div className="flex animate-scroll">
+            <div className="flex animate-scroll" style={{ willChange: 'transform' }}>
               {[...testimonials, ...testimonials].map((t, i) => (
                 <div
                   key={i}
                   className="flex-shrink-0 w-72 md:w-80 mr-4 rounded-xl border border-border/70 p-4 md:p-5 flex flex-col gap-3"
                 >
-                  <p className="text-sm text-muted-foreground leading-relaxed flex-1 whitespace-pre-line">{t.quote}</p>
+                  <div className="flex-1 flex flex-col gap-2">
+                    <p className="text-sm text-muted-foreground leading-relaxed">{t.quote}</p>
+                    {t.quote2 && <p className="text-sm text-muted-foreground leading-relaxed">{t.quote2}</p>}
+                  </div>
                   {t.author && (
                     <div className="border-t border-border/40 pt-2">
                       <p className="text-xs font-bold text-foreground">{t.author}</p>
