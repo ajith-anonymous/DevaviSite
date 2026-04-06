@@ -13,9 +13,10 @@ export const contacts = pgTable("contacts", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   name: text("name").notNull(),
   email: text("email").notNull(),
+  phone: text("phone").notNull(),
   company: text("company").notNull(),
-  adSpend: text("ad_spend").notNull(),
-  message: text("message"),
+  service: text("service").notNull(),
+  message: text("message").notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
@@ -29,12 +30,19 @@ export const insertContactSchema = createInsertSchema(contacts).omit({
   createdAt: true,
 });
 
+const SERVICE_OPTIONS = [
+  "Performance Marketing — Google",
+  "Performance Marketing — Meta",
+  "Performance Marketing — Google & Meta",
+] as const;
+
 export const contactFormSchema = insertContactSchema.extend({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
+  phone: z.string().min(7, "Please enter a valid phone number"),
   company: z.string().min(1, "Company name is required"),
-  adSpend: z.string().min(1, "Please select your monthly ad spend"),
-  message: z.string().optional(),
+  service: z.enum(SERVICE_OPTIONS, { errorMap: () => ({ message: "Please select a service" }) }),
+  message: z.string().min(10, "Please tell us a bit more about your business"),
 });
 
 export type InsertUser = z.infer<typeof insertUserSchema>;

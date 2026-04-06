@@ -19,8 +19,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
         console.log("📧 New contact form submission:", {
           name: contact.name,
           email: contact.email,
+          phone: contact.phone,
           company: contact.company,
-          adSpend: contact.adSpend,
+          service: contact.service,
           message: contact.message,
         });
       }

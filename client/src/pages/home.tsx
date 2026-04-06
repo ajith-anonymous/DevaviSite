@@ -1,9 +1,14 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useMutation } from '@tanstack/react-query';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import Hero from '@/components/sections/hero';
 import Container from '@/components/ui/container';
-import { Quote, Workflow } from 'lucide-react';
+import { Quote, Workflow, Phone, CheckCircle } from 'lucide-react';
+import { contactFormSchema, type ContactForm } from '@shared/schema';
+import { apiRequest } from '@/lib/queryClient';
 
 const testimonials = [
   {
@@ -39,27 +44,129 @@ const testimonials = [
   },
 ];
 
-const googleItems = [
-  'Search Campaigns',
-  'Performance Max',
-  'Shopping Campaigns',
-  'Display & Remarketing',
-  'Campaign Setup & Structure',
-  'Ongoing Optimisation',
-  'Budget Management',
-  'Performance Reporting',
-];
 
-const metaItems = [
-  'Feed & Story Ads',
-  'Reels Campaigns',
-  'Retargeting & Lookalikes',
-  'Audience Strategy',
-  'Campaign Setup & Structure',
-  'Ongoing Optimisation',
-  'Budget Management',
-  'Performance Reporting',
-];
+const SERVICE_OPTIONS = [
+  'Performance Marketing — Google',
+  'Performance Marketing — Meta',
+  'Performance Marketing — Google & Meta',
+] as const;
+
+function RequestCallbackForm() {
+  const [submitted, setSubmitted] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    setValue,
+    formState: { errors },
+  } = useForm<ContactForm>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: { name: '', email: '', phone: '', company: '', service: undefined as any, message: '' },
+  });
+
+  const selectedService = watch('service');
+
+  const mutation = useMutation({
+    mutationFn: (data: ContactForm) => apiRequest('POST', '/api/contact', data),
+    onSuccess: () => setSubmitted(true),
+  });
+
+  if (submitted) {
+    return (
+      <div className="mb-8 md:mb-10 rounded-2xl border border-border/70 bg-transparent p-8 md:p-10 text-center">
+        <div className="w-12 h-12 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center mx-auto mb-4">
+          <CheckCircle className="w-5 h-5 text-accent" />
+        </div>
+        <p className="text-foreground font-bold text-lg mb-1">Thank you!</p>
+        <p className="text-muted-foreground text-sm">We'll be in touch shortly.</p>
+      </div>
+    );
+  }
+
+  const inputClass = "w-full bg-background border border-border/70 rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-1 focus:ring-accent/60";
+  const labelClass = "block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5";
+
+  return (
+    <div className="mb-8 md:mb-10 rounded-2xl border border-border/70 bg-transparent p-5 md:p-7">
+      <div className="flex items-center gap-3 mb-6">
+        <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center flex-shrink-0">
+          <Phone className="w-4 h-4 text-muted-foreground" />
+        </div>
+        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">Request a Callback</p>
+      </div>
+
+      <form onSubmit={handleSubmit((data) => mutation.mutate(data))} className="space-y-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label className={labelClass}>Full Name</label>
+            <input {...register('name')} placeholder="Jane Doe" className={inputClass} />
+            {errors.name && <p className="text-xs text-red-400 mt-1">{errors.name.message}</p>}
+          </div>
+          <div>
+            <label className={labelClass}>Email Address</label>
+            <input {...register('email')} type="email" placeholder="jane@brand.com" className={inputClass} />
+            {errors.email && <p className="text-xs text-red-400 mt-1">{errors.email.message}</p>}
+          </div>
+          <div>
+            <label className={labelClass}>Phone Number</label>
+            <input {...register('phone')} type="tel" placeholder="+91 98765 43210" className={inputClass} />
+            {errors.phone && <p className="text-xs text-red-400 mt-1">{errors.phone.message}</p>}
+          </div>
+          <div>
+            <label className={labelClass}>Company Name</label>
+            <input {...register('company')} placeholder="Your Brand" className={inputClass} />
+            {errors.company && <p className="text-xs text-red-400 mt-1">{errors.company.message}</p>}
+          </div>
+        </div>
+
+        <div>
+          <label className={labelClass}>Services of Interest</label>
+          <div className="flex flex-col sm:flex-row gap-2">
+            {SERVICE_OPTIONS.map((option) => (
+              <button
+                key={option}
+                type="button"
+                onClick={() => setValue('service', option, { shouldValidate: true })}
+                className={`flex-1 text-left px-3 py-2.5 rounded-lg border text-sm transition-all duration-150 ${
+                  selectedService === option
+                    ? 'border-accent/70 bg-accent/10 text-foreground font-medium ring-1 ring-accent/50'
+                    : 'border-border/70 text-muted-foreground hover:border-border hover:text-foreground'
+                }`}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
+          {errors.service && <p className="text-xs text-red-400 mt-1">{errors.service.message}</p>}
+        </div>
+
+        <div>
+          <label className={labelClass}>Tell us about your business and current stage</label>
+          <textarea
+            {...register('message')}
+            rows={4}
+            placeholder="Share a bit about your brand, where you are currently with paid ads, and what you're hoping to achieve..."
+            className={`${inputClass} resize-none`}
+          />
+          {errors.message && <p className="text-xs text-red-400 mt-1">{errors.message.message}</p>}
+        </div>
+
+        <button
+          type="submit"
+          disabled={mutation.isPending}
+          className="w-full bg-accent text-accent-foreground font-semibold rounded-lg py-2.5 hover:bg-accent/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+        >
+          {mutation.isPending ? 'Submitting…' : 'Request a Callback'}
+        </button>
+
+        {mutation.isError && (
+          <p className="text-xs text-red-400 text-center">Something went wrong. Please try again or email us at hello@devavimedia.com</p>
+        )}
+      </form>
+    </div>
+  );
+}
 
 function ServicesSection() {
   return (
@@ -142,6 +249,8 @@ function ServicesSection() {
             ))}
           </div>
         </div>
+
+        <RequestCallbackForm />
 
       </Container>
     </section>
