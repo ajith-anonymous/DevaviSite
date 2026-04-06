@@ -147,19 +147,6 @@ function ServicesSection() {
           Google and Meta, managed end-to-end. No handoffs, no gaps, no guesswork.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Google Ads */}
-          <div className="rounded-xl border border-accent/40 bg-secondary/30 p-7 backdrop-blur-sm">
-            <p className="font-bold text-accent uppercase tracking-widest mb-1 text-[36px]">Google Ads</p>
-            <p className="text-muted-foreground mb-5 text-[20px]">Search, Shopping & Display</p>
-            <ul className="space-y-2">
-              {googleItems.map((item) => (
-                <li key={item} className="flex items-center gap-2 text-foreground text-[20px] text-left">
-                  <span className="w-1.5 h-1.5 rounded-full bg-foreground/40 flex-shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
           {/* Meta Ads */}
           <div className="rounded-xl border border-accent/40 bg-secondary/30 p-7 backdrop-blur-sm">
             <p className="font-bold text-accent uppercase tracking-widest mb-1 text-[36px]">Meta Ads</p>
