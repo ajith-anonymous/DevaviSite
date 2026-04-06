@@ -31,6 +31,11 @@ const testimonials = [
     author: "Chhaya Dabas",
     role: "Founder - Suvaa",
   },
+  {
+    quote: "It's been great working with Anushka on Google Ads for ATT. She brings clarity in planning and consistently delivers realistic, feasible strategies aligned with our objectives and budget. What stands out is how she ensures we understand the context behind each campaign. We've been able to see real-time improvements.",
+    author: "Ashwanth Suresh Babu",
+    role: "Founder - A Toddler Thing",
+  },
 ];
 
 const googleItems = [
