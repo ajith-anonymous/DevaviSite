@@ -143,9 +143,7 @@ function ServicesSection() {
         </div>
 
         {/* Services */}
-        <p className="text-muted-foreground text-base md:text-lg mb-10">
-          Google and Meta, managed end-to-end. No handoffs, no gaps, no guesswork.
-        </p>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Meta Ads */}
           <div className="rounded-xl border border-accent/40 bg-secondary/30 p-7 backdrop-blur-sm">
