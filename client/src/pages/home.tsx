@@ -72,10 +72,10 @@ function ServicesSection() {
             </div>
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">Testimonials</p>
           </div>
-          <div className="overflow-hidden relative">
+          <div className="overflow-hidden relative group">
             <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-background/80 to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-background/80 to-transparent z-10 pointer-events-none" />
-            <div className="flex animate-scroll" style={{ willChange: 'transform', width: 'max-content' }}>
+            <div className="flex animate-scroll group-hover:[animation-play-state:paused]" style={{ willChange: 'transform', width: 'max-content' }}>
               {[...testimonials, ...testimonials].map((t, i) => (
                 <div
                   key={i}
