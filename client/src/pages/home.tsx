@@ -13,6 +13,11 @@ const testimonials = [
   {
     quote: "Performance has been great. We've been able to scale with Flighted in a way that we haven't before.",
   },
+  {
+    quote: "It's been an absolute pleasure working with Swastik and Anushka. The warmth, focus, and humour you bring make every interaction memorable. Truly appreciate the way you approach things with clarity and intent. Always rooting for Devavi, onwards and upwards! :)",
+    author: "Jayant Shah",
+    role: "Head Of Business - Fix My Curls",
+  },
 ];
 
 const googleItems = [
