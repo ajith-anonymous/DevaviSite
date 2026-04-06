@@ -39,7 +39,7 @@ export default function Header() {
 
             {/* Mobile nav toggle placeholder — collapsed on small screens */}
             <nav className="md:hidden flex items-center gap-4 text-xs text-muted-foreground">
-              <a href="https://calendly.com/hello-devavimedia/30min" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Book a Call</a>
+              <a href="https://calendly.com/hello-devavimedia/30min" target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 rounded-lg bg-accent text-accent-foreground font-semibold hover:bg-accent/90 transition-colors text-xs">Book a Call</a>
             </nav>
           </div>
         </Container>
