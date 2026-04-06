@@ -58,7 +58,7 @@ function ServicesSection() {
                   key={i}
                   className="flex-shrink-0 w-72 md:w-80 mr-4 rounded-xl border border-border/70 p-4 md:p-5 flex flex-col gap-3"
                 >
-                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">"{t.quote}"</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">{t.quote}</p>
                   {t.author && (
                     <div className="border-t border-border/40 pt-2">
                       <p className="text-xs font-bold text-foreground">{t.author}</p>
