@@ -143,7 +143,6 @@ function ServicesSection() {
         </div>
 
         {/* Services */}
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3 text-center">Our Services</h2>
         <p className="text-muted-foreground text-base md:text-lg mb-10">
           Google and Meta, managed end-to-end. No handoffs, no gaps, no guesswork.
         </p>
