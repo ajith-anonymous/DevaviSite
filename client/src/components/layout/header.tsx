@@ -10,14 +10,13 @@ export default function Header() {
       >
         Skip to main content
       </a>
-
       <header className="sticky top-0 z-40 border-b border-border/50 bg-background/80 backdrop-blur-xl">
         <Container>
           <div className="flex justify-between items-center h-14 md:h-16">
             {/* Wordmark */}
             <Link href="/" className="hover:opacity-80 transition-opacity min-h-[44px] flex items-center">
               <span
-                className="text-foreground uppercase tracking-widest text-base md:text-lg font-bold"
+                className="text-foreground uppercase tracking-widest md:text-lg font-bold text-[22px]"
                 style={{ fontFamily: "'Open Sans Condensed', sans-serif" }}
               >
                 Devavi Media
