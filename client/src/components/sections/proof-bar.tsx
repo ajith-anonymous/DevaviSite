@@ -16,8 +16,8 @@ function LogoItem({ name, file }: { name: string; file: string }) {
       <img
         src={file}
         alt={name}
-        className="h-20 w-auto object-contain"
-        style={{ filter: 'brightness(1.2) contrast(1.1)' }}
+        className="h-[88px] w-auto object-contain"
+        style={{ filter: 'brightness(1.8) contrast(1.1)' }}
       />
     </div>
   );
@@ -29,7 +29,7 @@ export default function ProofBar() {
   ));
 
   return (
-    <section className="py-16 bg-muted">
+    <section className="py-16">
       <Container>
         <div className="text-center">
           <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-12">
