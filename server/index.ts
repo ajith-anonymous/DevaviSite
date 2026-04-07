@@ -6,6 +6,17 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Redirect www → non-www in production (e.g. www.devavimedia.com → devavimedia.com)
+if (process.env.NODE_ENV === "production") {
+  app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
+    const host = req.headers.host ?? "";
+    if (host.startsWith("www.")) {
+      return res.redirect(301, `https://${host.slice(4)}${req.url}`);
+    }
+    next();
+  });
+}
+
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
