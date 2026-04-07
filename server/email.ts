@@ -16,10 +16,11 @@ function esc(value: string): string {
 
 export async function sendLeadNotification(contact: Contact): Promise<void> {
   if (!RESEND_API_KEY) {
-    console.warn("⚠️  RESEND_API_KEY is not set — skipping email notification.");
+    console.warn("⚠️  RESEND_API_KEY is not set — lead email NOT sent for:", contact.name, contact.email);
     return;
   }
 
+  console.log("📧 Attempting to send lead email for:", contact.name, contact.email);
   const resend = new Resend(RESEND_API_KEY);
 
   const html = `
@@ -70,4 +71,6 @@ export async function sendLeadNotification(contact: Contact): Promise<void> {
   if (error) {
     throw new Error(`Resend API error: ${error.message}`);
   }
+
+  console.log("✅ Lead email sent successfully to", NOTIFY_TO, "for:", contact.name);
 }
