@@ -3,7 +3,11 @@ import type { Contact } from "@shared/schema";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const NOTIFY_TO = "hello@devavimedia.com";
-const FROM = "Devavi Media <onboarding@resend.dev>";
+// Use RESEND_FROM_EMAIL env var once devavimedia.com is verified in Resend.
+// Default to onboarding@resend.dev which works without domain verification.
+const FROM = process.env.RESEND_FROM_EMAIL
+  ? `Devavi Media <${process.env.RESEND_FROM_EMAIL}>`
+  : "Devavi Media <onboarding@resend.dev>";
 
 function esc(value: string): string {
   return value
