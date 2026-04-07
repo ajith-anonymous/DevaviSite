@@ -1,24 +1,43 @@
 import Container from '@/components/ui/container';
 
-export default function ProofBar() {
-  const logoItems = Array.from({ length: 8 }).map((_, i) => (
-    <div key={i} className="flex items-center justify-center flex-shrink-0 mx-8">
-      <div className="w-32 h-16 bg-muted-foreground/20 rounded-md flex items-center justify-center border border-border">
-        <span className="text-xs text-muted-foreground font-medium">Client Logo {i + 1}</span>
-      </div>
+const clients = [
+  { name: 'Goat Life', file: '/client-goatlife.png' },
+  { name: 'Ekatra', file: '/client-ekatra.png' },
+  { name: 'Toddler Thing', file: '/client-toddlerthing.png' },
+  { name: 'Suvaa', file: '/client-suvaa.png' },
+  { name: 'Born Plus', file: '/client-bornplus.png' },
+  { name: 'Angel Rocket', file: '/client-angelrocket.png' },
+  { name: 'Fix My Curls', file: '/client-fixmycurls.png' },
+];
+
+function LogoItem({ name, file }: { name: string; file: string }) {
+  return (
+    <div className="flex items-center justify-center flex-shrink-0 mx-10">
+      <img
+        src={file}
+        alt={name}
+        className="h-20 w-auto object-contain"
+        style={{ filter: 'brightness(1.2) contrast(1.1)' }}
+      />
     </div>
+  );
+}
+
+export default function ProofBar() {
+  const logoItems = clients.map((client) => (
+    <LogoItem key={client.name} name={client.name} file={client.file} />
   ));
 
   return (
     <section className="py-16 bg-muted">
       <Container>
         <div className="text-center">
-          <p className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-12">
-            Trusted by teams who value clarity
+          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-12">
+            Brands We've Helped Scale
           </p>
         </div>
       </Container>
-      
+
       <div className="overflow-hidden whitespace-nowrap">
         <div className="flex animate-scroll">
           {logoItems}
