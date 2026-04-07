@@ -16,8 +16,8 @@ function LogoItem({ name, file }: { name: string; file: string }) {
       <img
         src={file}
         alt={name}
-        className="h-[88px] w-auto object-contain"
-        style={{ filter: 'brightness(1.8) contrast(1.1)' }}
+        className="h-[97px] w-auto object-contain"
+        style={{ filter: 'brightness(2.5) contrast(1.1)' }}
       />
     </div>
   );
