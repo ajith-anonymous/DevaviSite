@@ -3,7 +3,7 @@ import type { Contact } from "@shared/schema";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const NOTIFY_TO = "hello@devavimedia.com";
-const FROM = "Devavi Media <leads@devavimedia.com>";
+const FROM = "Devavi Media <onboarding@resend.dev>";
 
 function esc(value: string): string {
   return value
