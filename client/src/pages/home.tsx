@@ -282,7 +282,7 @@ export default function Home() {
         { '@type': 'Person', name: 'Anushka Sirohi' },
       ],
       sameAs: [
-        'https://linkedin.com/company/devavi-media',
+        'https://www.linkedin.com/company/devavimedia',
         'https://twitter.com/devavimedia',
       ],
     };

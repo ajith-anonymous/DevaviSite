@@ -36,7 +36,7 @@ export default function Footer() {
           {/* Social icons */}
           <div className="flex items-center gap-3">
             <a
-              href="https://www.linkedin.com/company/105331753/admin/dashboard/"
+              href="https://www.linkedin.com/company/devavimedia"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
