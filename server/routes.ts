@@ -41,6 +41,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Redirect /home to root
+  app.get("/home", (_req, res) => {
+    res.redirect(301, "/");
+  });
+
   // Health check endpoint
   app.get("/api/health", (req, res) => {
     res.json({ status: "ok", timestamp: new Date().toISOString() });
