@@ -45,41 +45,29 @@ export default function Header() {
                   style={{ mixBlendMode: 'screen' }}
                 />
                 <span
-                  className="hidden md:inline text-foreground uppercase tracking-widest md:text-lg font-extrabold text-[22px]"
+                  className="text-foreground uppercase tracking-widest font-extrabold text-base md:text-[22px]"
                   style={{ fontFamily: "'Open Sans Condensed', sans-serif" }}
                 >
                   Devavi Media
                 </span>
               </Link>
 
-              {/* Desktop nav */}
-              <nav className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
-                <a href="/#testimonials" className="hover:text-foreground transition-colors">Testimonials</a>
-                <a href="/#our-process" className="hover:text-foreground transition-colors">Our Process</a>
+              {/* Nav — same on all screen sizes */}
+              <div className="flex items-center gap-3">
                 <a
                   href="https://calendly.com/hello-devavimedia/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-lg bg-accent text-accent-foreground font-semibold hover:bg-accent/90 transition-colors"
+                  className="px-3 py-1.5 md:px-4 md:py-2 rounded-lg bg-accent text-accent-foreground font-semibold hover:bg-accent/90 transition-colors text-xs md:text-sm whitespace-nowrap"
                 >
-                  Book a Discovery Call
-                </a>
-              </nav>
-
-              {/* Mobile nav */}
-              <div className="md:hidden flex items-center gap-3">
-                <a
-                  href="https://calendly.com/hello-devavimedia/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 py-1.5 rounded-lg bg-accent text-accent-foreground font-semibold hover:bg-accent/90 transition-colors text-xs"
-                >
-                  Book a Call
+                  <span className="md:hidden">Book a Call</span>
+                  <span className="hidden md:inline">Book a Discovery Call</span>
                 </a>
                 <button
                   onClick={() => setMenuOpen((o) => !o)}
                   aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-                  className="w-9 h-9 rounded-full bg-muted border border-border/60 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
+                  aria-expanded={menuOpen}
+                  className="w-9 h-9 rounded-full bg-muted border border-border/60 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors flex-shrink-0"
                 >
                   {menuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
                 </button>
@@ -88,9 +76,9 @@ export default function Header() {
           </Container>
         </header>
 
-        {/* Mobile dropdown */}
+        {/* Dropdown — shown on all screen sizes when open */}
         {menuOpen && (
-          <div className="md:hidden absolute left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border/50 px-4 py-3 flex flex-col gap-1">
+          <div className="absolute left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border/50 px-4 py-3 flex flex-col gap-1">
             <a
               href="/#testimonials"
               onClick={closeMenu}
