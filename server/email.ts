@@ -3,11 +3,20 @@ import type { Contact } from "@shared/schema";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const NOTIFY_TO = "hello@devavimedia.com";
-// Use RESEND_FROM_EMAIL env var once devavimedia.com is verified in Resend.
-// Default to onboarding@resend.dev which works without domain verification.
+
+// FROM defaults to onboarding@resend.dev (works without domain verification).
+// Once devavimedia.com is verified in Resend dashboard under "Domains", set
+// the RESEND_FROM_EMAIL env var to leads@devavimedia.com for branded sending.
 const FROM = process.env.RESEND_FROM_EMAIL
   ? `Devavi Media <${process.env.RESEND_FROM_EMAIL}>`
   : "Devavi Media <onboarding@resend.dev>";
+
+// Log email readiness at startup so it's visible in server output.
+if (RESEND_API_KEY) {
+  console.log(`📧 Email notifications ready — sending from: ${FROM} → ${NOTIFY_TO}`);
+} else {
+  console.warn("⚠️  RESEND_API_KEY not set — lead email notifications are disabled.");
+}
 
 function esc(value: string): string {
   return value
@@ -20,11 +29,10 @@ function esc(value: string): string {
 
 export async function sendLeadNotification(contact: Contact): Promise<void> {
   if (!RESEND_API_KEY) {
-    console.warn("⚠️  RESEND_API_KEY is not set — lead email NOT sent for:", contact.name, contact.email);
+    console.warn("⚠️  Skipping lead email (RESEND_API_KEY not set) for:", contact.name);
     return;
   }
 
-  console.log("📧 Attempting to send lead email for:", contact.name, contact.email);
   const resend = new Resend(RESEND_API_KEY);
 
   const html = `
@@ -76,5 +84,5 @@ export async function sendLeadNotification(contact: Contact): Promise<void> {
     throw new Error(`Resend API error: ${error.message}`);
   }
 
-  console.log("✅ Lead email sent successfully to", NOTIFY_TO, "for:", contact.name);
+  console.log(`✅ Lead email sent to ${NOTIFY_TO} for: ${contact.name} (${contact.company})`);
 }
