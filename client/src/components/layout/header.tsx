@@ -93,6 +93,13 @@ export default function Header() {
             >
               Our Process
             </a>
+            <a
+              href="/#request-callback"
+              onClick={closeMenu}
+              className="px-3 py-2.5 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors"
+            >
+              Request a Callback
+            </a>
           </div>
         )}
       </div>
