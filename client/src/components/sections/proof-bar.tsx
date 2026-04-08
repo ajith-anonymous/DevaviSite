@@ -16,6 +16,7 @@ function LogoItem({ name, file }: { name: string; file: string }) {
       <img
         src={file}
         alt={name}
+        loading="eager"
         className="h-[97px] w-auto object-contain"
         style={{ filter: 'brightness(2.5) contrast(1.1)' }}
       />
@@ -39,7 +40,7 @@ export default function ProofBar() {
       </Container>
 
       <div className="overflow-hidden whitespace-nowrap">
-        <div className="flex animate-scroll">
+        <div className="flex animate-scroll" style={{ willChange: 'transform' }}>
           {logoItems}
           {logoItems}
         </div>
